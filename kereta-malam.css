@@ -1,0 +1,258 @@
+.project-page {
+  overflow: clip;
+}
+
+.project-page figure,
+.project-page p {
+  margin: 0;
+}
+
+.project-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-page a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 5px;
+}
+
+.project-nav {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.project-nav a,
+.bottom-project-nav a {
+  display: inline-flex;
+  gap: 0.65rem;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+}
+
+.project-nav a {
+  padding-block: 0.5rem;
+}
+
+.project-nav a:hover,
+.bottom-project-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.project-hero {
+  padding-top: clamp(5rem, 11vw, 10rem);
+}
+
+.project-hero h1 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(3.4rem, 8.5vw, 9rem);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 0.88;
+}
+
+.project-meta {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem) !important;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+}
+
+.project-introduction {
+  max-width: 55rem;
+  margin-top: clamp(2.75rem, 5vw, 5rem) !important;
+  font-size: clamp(1.25rem, 2.25vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.case-section {
+  padding-top: clamp(1.25rem, 2vw, 2rem);
+  border-top: 1px solid var(--ink);
+}
+
+.case-section h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  font-weight: 550;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.section-copy p,
+.design-conclusion p {
+  color: #363832;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.62;
+}
+
+.final-cover {
+  margin-top: clamp(7rem, 14vw, 13rem);
+}
+
+.final-cover-artwork {
+  width: min(100%, 46rem);
+  margin: clamp(3rem, 6vw, 6rem) auto 0 !important;
+}
+
+.final-cover-artwork img,
+.palette-artwork img,
+.process-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.color-direction {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.section-copy p {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.palette-artwork {
+  width: 100%;
+}
+
+.process-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, 0.65fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.process-section--initial .section-copy {
+  grid-column: 2;
+}
+
+.process-section--initial .process-artwork {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.process-section--refinement {
+  grid-template-columns: minmax(17rem, 0.65fr) minmax(0, 1.35fr);
+}
+
+.process-section--refinement .section-copy {
+  grid-column: 1;
+}
+
+.process-section--refinement .process-artwork {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.process-artwork {
+  width: 100%;
+  max-width: 39rem;
+}
+
+.design-conclusion {
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.design-conclusion p {
+  max-width: 58rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.35rem, 2.4vw, 2.2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.38;
+}
+
+.bottom-project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: clamp(8rem, 15vw, 14rem);
+  padding-top: 1.5rem;
+  padding-bottom: clamp(3rem, 7vw, 7rem);
+  border-top: 1px solid var(--ink);
+}
+
+.bottom-project-nav a:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+@media (max-width: 48rem) {
+  .project-hero {
+    padding-top: 4rem;
+  }
+
+  .project-hero h1 {
+    font-size: clamp(3.3rem, 17vw, 6rem);
+    line-height: 0.92;
+  }
+
+  .project-introduction {
+    margin-top: 2.75rem !important;
+    font-size: 1.22rem;
+  }
+
+  .final-cover {
+    margin-top: 6.5rem;
+  }
+
+  .final-cover-artwork {
+    margin-top: 2.75rem !important;
+  }
+
+  .color-direction,
+  .process-section,
+  .process-section--refinement {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    margin-top: 7rem;
+  }
+
+  .color-direction .section-copy,
+  .color-direction .palette-artwork,
+  .process-section .section-copy,
+  .process-section .process-artwork {
+    grid-column: 1;
+  }
+
+  .color-direction .section-copy,
+  .process-section .section-copy {
+    grid-row: 1;
+  }
+
+  .color-direction .palette-artwork,
+  .process-section .process-artwork {
+    grid-row: 2;
+  }
+
+  .section-copy p {
+    margin-top: 1.5rem;
+  }
+
+  .design-conclusion {
+    margin-top: 7rem;
+  }
+
+  .design-conclusion p {
+    margin-top: 2rem;
+    font-size: 1.35rem;
+  }
+
+  .bottom-project-nav {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .bottom-project-nav a:last-child {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

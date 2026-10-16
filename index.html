@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AI for Interdisciplinary Design Portfolio — Fandi Siribon"
+    />
+    <title>AI for Interdisciplinary Design Portfolio — Fandi Siribon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="masthead page-shell">
+        <h1>AI for Interdisciplinary<br />Design Portfolio</h1>
+        <p class="portfolio-owner">Fandi Siribon</p>
+      </header>
+
+      <section class="flower-section page-shell" aria-label="Interactive flower area">
+        <button
+          class="flower-field"
+          id="flower-field"
+          type="button"
+          aria-describedby="flower-instruction flower-status"
+        >
+          <span class="flower-instruction" id="flower-instruction">
+            Click to add a flower
+          </span>
+          <span class="flower-layer" id="flower-layer" aria-hidden="true"></span>
+        </button>
+        <span class="visually-hidden" id="flower-status" aria-live="polite"></span>
+      </section>
+
+      <section class="projects page-shell" aria-label="Projects">
+        <article class="project-card project-card--wide">
+          <a class="project-link" href="future-work-cafe-2035.html">
+            <div class="project-heading">
+              <span class="project-number">Project 01</span>
+              <h2 class="project-title">Future Work Café 2035</h2>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <span class="project-image-frame">
+              <img
+                src="Assets/1%20-%20CONCEPT.jpg"
+                alt="Interior view of a café and shared workspace with wood finishes, tables, seating areas, and abundant planting"
+              />
+            </span>
+          </a>
+        </article>
+
+        <article class="project-card project-card--square">
+          <a class="project-link" href="kereta-malam.html">
+            <div class="project-heading">
+              <span class="project-number">Project 02</span>
+              <h2 class="project-title">Kereta Malam</h2>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <span class="project-image-frame">
+              <img
+                src="Assets/2%20-%20FINAL%20PICTURE.png"
+                alt="Square album cover showing a sunset landscape through a train window with the title Kereta Malam"
+              />
+            </span>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

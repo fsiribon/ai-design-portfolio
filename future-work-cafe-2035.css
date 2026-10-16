@@ -1,0 +1,139 @@
+.future-page .project-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3.4rem, 7.3vw, 7.5rem);
+  line-height: 0.92;
+}
+
+.future-page .project-introduction {
+  max-width: 62rem;
+}
+
+.wide-study {
+  margin-top: clamp(7rem, 14vw, 13rem);
+}
+
+.study-heading {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.study-heading p {
+  max-width: 48rem;
+  color: #363832;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.62;
+}
+
+.wide-artwork {
+  width: 100%;
+  margin-top: clamp(3rem, 6vw, 6rem) !important;
+}
+
+.wide-artwork img,
+.blender-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.floor-plan-study {
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.floor-plan-artwork {
+  margin-inline: calc(var(--page-gutter) * -0.15) !important;
+  width: calc(100% + var(--page-gutter) * 0.3);
+}
+
+.blender-study {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.72fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.blender-study--development .section-copy {
+  grid-column: 2;
+}
+
+.blender-study--development .blender-artwork {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.blender-study--final {
+  grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 1fr);
+}
+
+.blender-study--final .section-copy {
+  grid-column: 1;
+}
+
+.blender-study--final .blender-artwork {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.blender-artwork {
+  width: min(100%, 34rem);
+}
+
+.future-page .design-conclusion {
+  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+@media (max-width: 48rem) {
+  .future-page .project-hero h1 {
+    max-width: 10ch;
+    font-size: clamp(3rem, 13.5vw, 5.25rem);
+    line-height: 0.94;
+  }
+
+  .wide-study,
+  .floor-plan-study,
+  .blender-study {
+    margin-top: 7rem;
+  }
+
+  .study-heading,
+  .blender-study,
+  .blender-study--final {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .wide-artwork {
+    margin-top: 2.75rem !important;
+  }
+
+  .floor-plan-artwork {
+    width: 100%;
+    margin-inline: 0 !important;
+  }
+
+  .blender-study .section-copy,
+  .blender-study .blender-artwork {
+    grid-column: 1;
+  }
+
+  .blender-study .section-copy {
+    grid-row: 1;
+  }
+
+  .blender-study .blender-artwork {
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .blender-artwork {
+    width: 100%;
+    max-width: 29.25rem;
+  }
+
+  .future-page .design-conclusion {
+    margin-top: 7rem;
+  }
+}

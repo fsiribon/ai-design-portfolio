@@ -11,25 +11,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <header class="masthead page-shell">
-        <h1>AI for Interdisciplinary<br />Design Portfolio</h1>
-        <p class="portfolio-owner">Fandi Siribon</p>
-      </header>
+    <header class="site-header page-shell">
+      <a class="brand" href="index.html" aria-label="Fandi Siribon — Home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Fandi Siribon</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="kereta-malam.html">Kereta Malam</a>
+        <a href="future-work-cafe-2035.html">Future Work Café 2035</a>
+      </nav>
+    </header>
 
-      <section class="flower-section page-shell" aria-label="Interactive flower area">
+    <main>
+      <section class="masthead page-shell" aria-labelledby="portfolio-title">
+        <h1 id="portfolio-title">
+          <span>AI for Interdisciplinary Design</span>
+          <em>Portfolio.</em>
+        </h1>
+        <p class="portfolio-owner">Fandi Siribon</p>
+      </section>
+
+      <section class="bird-section page-shell" aria-label="Interactive bird area">
         <button
-          class="flower-field"
-          id="flower-field"
+          class="bird-field"
+          id="bird-field"
           type="button"
-          aria-describedby="flower-instruction flower-status"
+          aria-describedby="bird-instruction bird-status"
         >
-          <span class="flower-instruction" id="flower-instruction">
-            Click to add a flower
+          <span class="bird-instruction" id="bird-instruction">
+            Click to release a bird
           </span>
-          <span class="flower-layer" id="flower-layer" aria-hidden="true"></span>
+          <span class="bird-layer" id="bird-layer" aria-hidden="true"></span>
         </button>
-        <span class="visually-hidden" id="flower-status" aria-live="polite"></span>
+        <span class="visually-hidden" id="bird-status" aria-live="polite"></span>
       </section>
 
       <section class="projects page-shell" aria-label="Projects">

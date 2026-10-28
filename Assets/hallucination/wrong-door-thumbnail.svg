@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">The Wrong Door concept</title>
+  <desc id="desc">A dark symmetrical hallway with three numbered doors, contradictory exit signs, and warm light beneath the center door.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#252321"/>
+      <stop offset="0.5" stop-color="#45413b"/>
+      <stop offset="1" stop-color="#26343d"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#2e2b28"/>
+      <stop offset="1" stop-color="#171615"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0.5" cy="1" r="0.7">
+      <stop offset="0" stop-color="#d6a85f" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#d6a85f" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#d6a85f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#wall)"/>
+  <path d="M0 0h1600l-350 395H350z" fill="#302d2a"/>
+  <path d="M0 1000h1600l-300-430H300z" fill="url(#floor)"/>
+  <path d="M0 0l350 395v175L0 1000z" fill="#211f1d" fill-opacity="0.68"/>
+  <path d="M1600 0l-350 395v175l350 430z" fill="#52667a" fill-opacity="0.22"/>
+
+  <g font-family="Inter, Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <g transform="translate(185 285)">
+      <rect width="230" height="72" rx="4" fill="#273534" stroke="#d8d0c2" stroke-opacity="0.45"/>
+      <text x="115" y="47" fill="#d8d0c2" font-size="28" letter-spacing="4">EXIT ←</text>
+    </g>
+    <g transform="translate(1185 245)">
+      <rect width="230" height="72" rx="4" fill="#3b2929" stroke="#d8d0c2" stroke-opacity="0.35"/>
+      <text x="115" y="47" fill="#d3a5a0" font-size="28" letter-spacing="4">EXIT →</text>
+    </g>
+
+    <g transform="translate(185 400)">
+      <rect width="280" height="455" fill="#151414"/>
+      <rect x="15" y="15" width="250" height="440" fill="#2b2927" stroke="#d8d0c2" stroke-opacity="0.16"/>
+      <text x="140" y="93" fill="#d8d0c2" font-size="30" letter-spacing="6">26</text>
+      <circle cx="230" cy="255" r="8" fill="#d6a85f"/>
+    </g>
+
+    <g transform="translate(595 300)">
+      <ellipse cx="205" cy="570" rx="280" ry="150" fill="url(#light)" filter="url(#glow)"/>
+      <rect width="410" height="590" fill="#151414"/>
+      <rect x="18" y="18" width="374" height="572" fill="#312d28" stroke="#d8d0c2" stroke-opacity="0.2"/>
+      <text x="205" y="116" fill="#d8d0c2" font-size="48" letter-spacing="8">27</text>
+      <text x="226" y="125" fill="#7b3030" fill-opacity="0.5" font-size="48" letter-spacing="8">28</text>
+      <circle cx="345" cy="324" r="10" fill="#d6a85f"/>
+      <rect x="-18" y="580" width="446" height="12" fill="#d6a85f"/>
+    </g>
+
+    <g transform="translate(1135 420)">
+      <rect width="280" height="435" fill="#151414"/>
+      <rect x="15" y="15" width="250" height="420" fill="#293039" stroke="#d8d0c2" stroke-opacity="0.14"/>
+      <text x="140" y="90" fill="#a9b5bf" font-size="30" letter-spacing="6">29</text>
+      <circle cx="230" cy="245" r="8" fill="#52667a"/>
+    </g>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#f7f5ef">
+    <text x="70" y="82" font-size="28" font-weight="700" letter-spacing="5">THE WRONG DOOR</text>
+    <text x="70" y="125" font-size="20" fill="#d6a85f" letter-spacing="2">EVERY DOOR LOOKS POSSIBLE.</text>
+  </g>
+</svg>

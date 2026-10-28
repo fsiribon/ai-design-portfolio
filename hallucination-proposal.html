@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The Wrong Door — Week 1 research and game proposal by Fandi Siribon"
+    />
+    <title>The Wrong Door — Research &amp; Game Proposal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hallucination-proposal.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#proposal-content">Skip to proposal</a>
+
+    <main class="proposal-page" id="proposal-content">
+      <nav class="proposal-topbar page-shell" aria-label="Proposal navigation">
+        <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to Home</a>
+        <p>Week 08 · Hallucination · Week 1 Proposal</p>
+      </nav>
+
+      <header class="proposal-hero page-shell" id="introduction">
+        <div class="hero-copy">
+          <p class="section-kicker">01 / Introduce the game</p>
+          <h1>THE WRONG <em>DOOR</em></h1>
+          <p class="hero-tagline">Every door looks possible. Not every door should be opened.</p>
+          <p class="hero-summary">
+            A short browser-based psychological puzzle set in an ordinary hallway at night. The
+            player is trying to get home, using one simple action: <strong>click a door</strong>.
+            What begins as a readable space becomes a test of whether visible clues can still be
+            trusted.
+          </p>
+          <ul class="hero-facts" aria-label="Game proposal facts">
+            <li>Short browser game</li>
+            <li>One main interaction</li>
+            <li>Opening + 3 stages + ending</li>
+            <li>Trust → notice → doubt → reconsider</li>
+          </ul>
+        </div>
+
+        <figure class="hallway-hero" aria-labelledby="hero-visual-caption">
+          <div class="hallway-ceiling" aria-hidden="true"></div>
+          <div class="hallway-sign hallway-sign--left" aria-hidden="true">EXIT ←</div>
+          <div class="hallway-sign hallway-sign--right" aria-hidden="true">EXIT →</div>
+          <div class="hallway-doors" aria-hidden="true">
+            <span class="concept-door concept-door--left"><span>26</span></span>
+            <span class="concept-door concept-door--center">
+              <span class="door-number door-number--first">27</span>
+              <span class="door-number door-number--second">28</span>
+            </span>
+            <span class="concept-door concept-door--right"><span>29</span></span>
+          </div>
+          <div class="hallway-floor" aria-hidden="true"></div>
+          <figcaption id="hero-visual-caption">
+            Original concept visualization — a familiar hallway whose numbers and directions no
+            longer agree. Non-playable Week 1 presentation image.
+          </figcaption>
+        </figure>
+      </header>
+
+      <nav class="section-nav page-shell" aria-label="Proposal sections">
+        <a href="#case-study"><span>02</span> Case study</a>
+        <a href="#critical-discussion"><span>03</span> AI discussion</a>
+        <a href="#narrative"><span>04</span> Narrative</a>
+        <a href="#journey"><span>05</span> Journey</a>
+        <a href="#style-sound"><span>06</span> Style + sound</a>
+        <a href="#build-plan"><span>07</span> Build plan</a>
+      </nav>
+
+      <section class="proposal-section page-shell" id="case-study" aria-labelledby="case-study-title">
+        <div class="section-heading">
+          <p class="section-kicker">02 / Present the case study</p>
+          <h2 id="case-study-title">The same action can change its meaning.</h2>
+          <p>
+            I played <cite>Geometric Somnium</cite>, a browser game by Chezz Studios. Its visual
+            language is not the model for my game. The useful lesson is behavioral: I began by
+            chasing everything and ended by deciding what was worth approaching.
+          </p>
+        </div>
+
+        <div class="case-intro-grid">
+          <div class="case-title-card">
+            <p class="card-label">Case study</p>
+            <h3>Geometric Somnium</h3>
+            <p>Chezz Studios · Released HTML5 browser game</p>
+            <a
+              class="text-link"
+              href="https://chezz-studios.itch.io/geometric-somnium"
+              target="_blank"
+              rel="noopener"
+            >Official game + creator page <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="evidence-key" aria-label="Evidence categories">
+            <div>
+              <span class="evidence-dot evidence-dot--source" aria-hidden="true"></span>
+              <strong>Creator statement</strong>
+              <p>What Chezz Studios confirms on the official itch.io page.</p>
+            </div>
+            <div>
+              <span class="evidence-dot evidence-dot--observation" aria-hidden="true"></span>
+              <strong>My observation</strong>
+              <p>What I saw and did during my own playthrough.</p>
+            </div>
+            <div>
+              <span class="evidence-dot evidence-dot--interpretation" aria-hidden="true"></span>
+              <strong>My interpretation</strong>
+              <p>What I think the experience means and how it informed my design.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="verified-research" aria-labelledby="verified-title">
+          <div>
+            <p class="card-label">Creator statement · verified primary source</p>
+            <h3 id="verified-title">What the official page confirms</h3>
+          </div>
+          <ul>
+            <li>Players interact with triangles, squares, keys, and other shapes to gain lucidity.</li>
+            <li>Reaching 100% lucidity causes the player to awaken and the game to restart.</li>
+            <li>Keys add 25 lucidity.</li>
+            <li>Other shapes can darken the screen, split, interfere with controls, spawn shapes, increase lucidity, or decrease health.</li>
+            <li>Shapes disappear after being touched, and each playthrough generates a random set of colored shapes.</li>
+            <li>The creator discloses that AI assisted with some of the code.</li>
+          </ul>
+          <p class="source-note">
+            The source does not establish a universal color-to-effect rule. Color-specific effects
+            are therefore not presented here as creator-defined mechanics.
+          </p>
+        </div>
+
+        <div class="subsection-heading">
+          <p class="card-label">My observation</p>
+          <h3>Three meaningful moments</h3>
+          <p>Actual screenshots from my playthrough, paired with what changed in my understanding.</p>
+        </div>
+
+        <div class="moment-grid">
+          <article class="moment-card">
+            <figure>
+              <img
+                src="Assets/hallucination/geometric-somnium-first-assumption.png"
+                alt="Geometric Somnium playthrough showing many bright geometric objects, two status bars, and several key symbols"
+              />
+            </figure>
+            <div class="moment-copy">
+              <span class="moment-number">Moment 01</span>
+              <h4>I thought everything was collectible</h4>
+              <p>
+                At first, every colorful shape looked like something I should catch. The same basic
+                action soon produced very different consequences.
+              </p>
+              <p class="interpretation"><strong>Interpretation:</strong> automatic collection became uncertainty.</p>
+            </div>
+          </article>
+
+          <article class="moment-card">
+            <figure>
+              <img
+                src="Assets/hallucination/geometric-somnium-selective-attention.png"
+                alt="Geometric Somnium playthrough with a sparse field, two nearby circular objects, and reduced status bars"
+              />
+            </figure>
+            <div class="moment-copy">
+              <span class="moment-number">Moment 02</span>
+              <h4>Learning to choose</h4>
+              <p>
+                After helpful and harmful interactions, I stopped chasing every visible object. I
+                began observing first and deciding whether it was worth approaching.
+              </p>
+              <p class="interpretation"><strong>Interpretation:</strong> progress involved selective attention.</p>
+            </div>
+          </article>
+
+          <article class="moment-card">
+            <figure>
+              <img
+                src="Assets/hallucination/geometric-somnium-awakening.png"
+                alt="Geometric Somnium ending screen displaying AWAKENING and a message that maximum lucidity has been reached"
+              />
+            </figure>
+            <div class="moment-copy">
+              <span class="moment-number">Moment 03</span>
+              <h4>Awakening</h4>
+              <p>
+                At 100% lucidity, the screen displayed “AWAKENING” and explained that maximum
+                lucidity had been reached before restarting.
+              </p>
+              <p class="interpretation"><strong>Interpretation:</strong> the objective became completely clear only at the end.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="events-block">
+          <div class="subsection-heading">
+            <p class="card-label">My play</p>
+            <h3>Six player-action events</h3>
+            <p>Action → response → understanding</p>
+          </div>
+
+          <div class="events-table-wrap">
+            <table class="events-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Player action</th>
+                  <th scope="col">Game response</th>
+                  <th scope="col">Player understanding</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">01</th>
+                  <td>I chased colorful shapes because I assumed they were collectibles.</td>
+                  <td>Different interactions produced different results.</td>
+                  <td>Not every visible object should automatically be collected.</td>
+                </tr>
+                <tr>
+                  <th scope="row">02</th>
+                  <td>I touched objects that appeared useful.</td>
+                  <td>Some interactions improved my progress or condition.</td>
+                  <td>Some shapes can help me.</td>
+                </tr>
+                <tr>
+                  <th scope="row">03</th>
+                  <td>I touched another shape.</td>
+                  <td>Additional shapes appeared and the screen became more crowded.</td>
+                  <td>An interaction can make the environment more confusing.</td>
+                </tr>
+                <tr>
+                  <th scope="row">04</th>
+                  <td>I interacted with an object that produced a harmful effect.</td>
+                  <td>My condition or health decreased.</td>
+                  <td>Objects that invite interaction are not necessarily beneficial.</td>
+                </tr>
+                <tr>
+                  <th scope="row">05</th>
+                  <td>I collected a key.</td>
+                  <td>The key increased lucidity. The creator confirms keys add 25 lucidity.</td>
+                  <td>Keys are reliable progress objects compared with other uncertain effects.</td>
+                </tr>
+                <tr>
+                  <th scope="row">06</th>
+                  <td>I continued until lucidity reached 100%.</td>
+                  <td>The game displayed “AWAKENING” and indicated that I had awakened.</td>
+                  <td>The larger objective is to move toward maximum lucidity and awakening.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="lesson-bridge">
+          <div>
+            <span>Geometric Somnium</span>
+            <strong>Not every shape should be touched.</strong>
+          </div>
+          <span class="bridge-arrow" aria-hidden="true">→</span>
+          <div>
+            <span>The Wrong Door</span>
+            <strong>Not every door should be opened.</strong>
+          </div>
+        </div>
+        <p class="lesson-note">
+          What I am adapting is the change in player behavior—not the game’s geometric appearance.
+        </p>
+      </section>
+
+      <section class="proposal-section discussion-section" id="critical-discussion" aria-labelledby="discussion-title">
+        <div class="page-shell">
+          <div class="section-heading">
+            <p class="section-kicker">03 / Critical discussion with AI</p>
+            <h2 id="discussion-title">The useful insight appeared after I challenged the first answer.</h2>
+            <p>
+              The first analysis described the game mainly as trial and error. My observations
+              showed that this was incomplete: the more important change was from automatic action
+              to distrust and selective attention.
+            </p>
+          </div>
+
+          <div class="gap-grid">
+            <article class="gap-card">
+              <span class="gap-number">Gap 01 / Interaction</span>
+              <h3>The analysis missed how my behavior changed.</h3>
+              <p>
+                I did not keep experimenting randomly. I first chased everything; later I watched,
+                avoided, and chose.
+              </p>
+            </article>
+            <article class="gap-card">
+              <span class="gap-number">Gap 02 / Evidence</span>
+              <h3>A visual pattern was treated as a verified rule.</h3>
+              <p>
+                The official page confirms possible effects, but not a fixed color-to-effect code.
+                My color association remains an observation, not a creator statement.
+              </p>
+            </article>
+          </div>
+
+          <div class="dialogue" aria-label="Selected critical discussion with AI">
+            <article class="dialogue-turn dialogue-turn--me">
+              <span>Me / Challenge</span>
+              <p>
+                “You described the game mainly as trial and error, but in my first play I thought
+                every colorful shape was something I should collect. Later I realized that some
+                interactions could hurt me or make more shapes appear, so I started avoiding
+                objects instead of trying everything. Does this mean the game is also about distrust
+                and selective attention, not only trial and error?”
+              </p>
+            </article>
+            <article class="dialogue-turn dialogue-turn--ai">
+              <span>AI / Revision</span>
+              <p>
+                “Yes. Trial and error explains how you discovered the rules, but not how your
+                behavior changed. Once similar-looking objects produced different consequences,
+                interaction became a decision about trust. The game moved you from automatic
+                collection toward observation and selective attention.”
+              </p>
+            </article>
+            <article class="dialogue-turn dialogue-turn--me">
+              <span>Me / New evidence</span>
+              <p>
+                “The official creator page lists several possible shape effects, but it does not say
+                that a particular color always gives a particular effect. We should separate what I
+                observed from what the creator actually confirms.”
+              </p>
+            </article>
+            <article class="dialogue-turn dialogue-turn--ai">
+              <span>AI / Revised insight</span>
+              <p>
+                “The safer interpretation is that uncertainty comes from the consequences of
+                interaction, not from a verified universal color code. Your personal color
+                observation can be documented as an observation, but not as a creator-defined rule.”
+              </p>
+            </article>
+          </div>
+
+          <div class="conclusion-grid">
+            <div>
+              <p class="card-label">My conclusion</p>
+              <p class="large-copy">
+                The same simple action—approaching and touching something—does not always mean the
+                same thing. The player gradually learns not to trust every invitation to interact.
+              </p>
+            </div>
+            <div>
+              <p class="card-label">Design decision</p>
+              <p class="large-copy">
+                My game uses one equally simple action: <strong>click a door</strong>. Across three
+                stages, visual clues conflict, change, and lead into loops.
+              </p>
+            </div>
+          </div>
+          <blockquote>
+            “Hallucination becomes interesting when the player cannot immediately trust what they
+            see or what an interaction will do.”
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="proposal-section page-shell" id="narrative" aria-labelledby="narrative-title">
+        <div class="section-heading">
+          <p class="section-kicker">04 / Narrative and concept</p>
+          <h2 id="narrative-title">An ordinary hallway becomes unreliable.</h2>
+          <p>
+            Hallucination is represented as a gradual loss of confidence in visible evidence. The
+            player does not simply see bizarre imagery; ordinary information stops behaving
+            consistently.
+          </p>
+        </div>
+
+        <div class="narrative-grid">
+          <article>
+            <span class="card-label">World</span>
+            <h3>A hallway at night</h3>
+            <p>
+              Repeated apartment or hotel doors, room numbers, EXIT signs, warm lights, quiet
+              objects, and sounds behind doors. Numbers change, directions disagree, and spaces
+              repeat.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Player role</span>
+            <h3>Someone trying to get home</h3>
+            <p>
+              There is no complicated backstory. The player’s identity is defined by one immediate
+              goal: find the door that leads home.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Core rule</span>
+            <h3>Click a door</h3>
+            <p>
+              The control never changes. What changes is the player’s confidence that a label,
+              light, sound, or direction can be believed.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Intended experience</span>
+            <h3>Unresolved relief</h3>
+            <p>
+              Recognition becomes trust, trust becomes doubt, and doubt becomes reconsideration.
+              Even the apparent escape leaves one contradiction behind.
+            </p>
+          </article>
+        </div>
+
+        <div class="experience-path" aria-label="Narrative experience path">
+          <span>Arrive</span><i aria-hidden="true"></i>
+          <span>Wonder</span><i aria-hidden="true"></i>
+          <span>Doubt</span><i aria-hidden="true"></i>
+          <span>Change</span><i aria-hidden="true"></i>
+          <span>Leave</span>
+        </div>
+
+        <figure class="corridor-study" aria-labelledby="corridor-caption">
+          <div class="corridor-copy">
+            <span>Familiar</span>
+            <span>Uncertain</span>
+            <span>Contradictory</span>
+            <span>Unreliable</span>
+          </div>
+          <div class="corridor-perspective" aria-hidden="true">
+            <span class="corridor-door corridor-door--1">101</span>
+            <span class="corridor-door corridor-door--2">EXIT</span>
+            <span class="corridor-door corridor-door--3">HOME</span>
+          </div>
+          <figcaption id="corridor-caption">
+            Original CSS concept study showing how repetition, light, and labels can destabilize an
+            otherwise restrained corridor.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="proposal-section journey-section" id="journey" aria-labelledby="journey-title">
+        <div class="page-shell">
+          <div class="section-heading">
+            <p class="section-kicker">05 / Interaction and player journey</p>
+            <h2 id="journey-title">One click, three changing meanings.</h2>
+            <p>
+              Every stage asks the player to click a door. The journey develops by changing whether
+              environmental clues deserve trust—not by adding more controls.
+            </p>
+          </div>
+
+          <div class="stage-grid">
+            <article class="stage-card stage-card--opening">
+              <span>Opening / Enter</span>
+              <h3>Find your door. Go home.</h3>
+              <dl>
+                <div><dt>Scene</dt><dd>Ordinary hallway, three doors.</dd></div>
+                <div><dt>Input</dt><dd>Click a door.</dd></div>
+                <div><dt>Feedback</dt><dd>The door opens into another hallway.</dd></div>
+                <div><dt>Understanding</dt><dd>A door choice moves me forward.</dd></div>
+              </dl>
+            </article>
+            <article class="stage-card stage-card--one">
+              <span>Stage 1 / Notice</span>
+              <h3>Trust the visible clue.</h3>
+              <dl>
+                <div><dt>Doors</dt><dd>101 / 102 / 103</dd></div>
+                <div><dt>Clue</dt><dd>Warm light beneath one door.</dd></div>
+                <div><dt>Wrong</dt><dd>Loop back to the hallway.</dd></div>
+                <div><dt>Understanding</dt><dd>Visual clues can guide me.</dd></div>
+              </dl>
+            </article>
+            <article class="stage-card stage-card--two">
+              <span>Stage 2 / Doubt</span>
+              <h3>The hallway can lie.</h3>
+              <dl>
+                <div><dt>Doors</dt><dd>201 / 202 / 203</dd></div>
+                <div><dt>Conflict</dt><dd>EXIT points one way; warm light suggests another.</dd></div>
+                <div><dt>Loop</dt><dd>Numbers subtly change on return.</dd></div>
+                <div><dt>Understanding</dt><dd>A familiar clue may be false.</dd></div>
+              </dl>
+            </article>
+            <article class="stage-card stage-card--three">
+              <span>Stage 3 / Reconsider</span>
+              <h3>Question everything.</h3>
+              <dl>
+                <div><dt>Doors</dt><dd>HOME / EXIT / ???</dd></div>
+                <div><dt>Conflict</dt><dd>Inviting light and familiar sound disagree with other clues.</dd></div>
+                <div><dt>Choice</dt><dd>Use what the earlier loops taught you.</dd></div>
+                <div><dt>Understanding</dt><dd>Convincing is not the same as truthful.</dd></div>
+              </dl>
+            </article>
+            <article class="stage-card stage-card--ending">
+              <span>Ending / Leave</span>
+              <h3>You found home.</h3>
+              <dl>
+                <div><dt>Transition</dt><dd>Soft morning light; hallway ambience stops.</dd></div>
+                <div><dt>Change</dt><dd>27 becomes 28.</dd></div>
+                <div><dt>Question</dt><dd>Did you find the right door, or did it become the right door?</dd></div>
+                <div><dt>Continue</dt><dd>Fade to black; restart.</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <div class="subsection-heading">
+            <p class="card-label">Flowchart</p>
+            <h3>The complete interaction loop</h3>
+            <p>Original HTML/CSS diagram — no external image.</p>
+          </div>
+
+          <div class="flowchart" aria-label="The Wrong Door player flowchart">
+            <div class="flow-node flow-node--start"><span>Start</span><strong>Opening</strong><small>Find your door</small></div>
+            <span class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="flow-node"><span>Stage 1</span><strong>Notice</strong><small>Follow a visual clue</small></div>
+            <span class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="decision-row">
+              <div class="flow-node flow-node--decision"><strong>Correct?</strong></div>
+              <div class="flow-branch"><span>No → loop → try again</span><span>Yes ↓</span></div>
+            </div>
+            <div class="flow-node"><span>Stage 2</span><strong>Doubt</strong><small>Choose between conflicting clues</small></div>
+            <span class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="decision-row">
+              <div class="flow-node flow-node--decision"><strong>Correct?</strong></div>
+              <div class="flow-branch"><span>No → changed hallway → reconsider</span><span>Yes ↓</span></div>
+            </div>
+            <div class="flow-node"><span>Stage 3</span><strong>Reconsider</strong><small>HOME / EXIT / ???</small></div>
+            <span class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="flow-node flow-node--ending"><span>Ending</span><strong>You found home</strong><small>27 → 28 · final question · restart</small></div>
+          </div>
+
+          <div class="subsection-heading storyboard-heading">
+            <p class="card-label">Five-frame storyboard</p>
+            <h3>Goal, input, feedback, continuation</h3>
+          </div>
+
+          <div class="storyboard-grid">
+            <article class="storyboard-card">
+              <div class="story-visual story-visual--opening" aria-hidden="true">
+                <span>101</span><span>102</span><span>103</span>
+              </div>
+              <span class="story-number">01 / Opening</span>
+              <h4>Enter the Hallway</h4>
+              <p><strong>Goal:</strong> Find your door.</p>
+              <p><strong>Input:</strong> Click a door.</p>
+              <p><strong>Feedback:</strong> Door opens.</p>
+              <p><strong>Continue:</strong> Enter Stage 1.</p>
+            </article>
+            <article class="storyboard-card">
+              <div class="story-visual story-visual--trust" aria-hidden="true">
+                <span>101</span><span>102</span><span>103</span>
+              </div>
+              <span class="story-number">02 / Stage 1</span>
+              <h4>Trust the Clue</h4>
+              <p><strong>Goal:</strong> Find the likely door.</p>
+              <p><strong>Input:</strong> Click the illuminated door.</p>
+              <p><strong>Feedback:</strong> Hallway advances.</p>
+              <p><strong>Continue:</strong> A similar hallway appears.</p>
+            </article>
+            <article class="storyboard-card">
+              <div class="story-visual story-visual--lie" aria-hidden="true">
+                <b>EXIT →</b><span>201</span><span>202</span><span>203</span>
+              </div>
+              <span class="story-number">03 / Stage 2</span>
+              <h4>The Clue Lies</h4>
+              <p><strong>Goal:</strong> Decide which clue to trust.</p>
+              <p><strong>Input:</strong> Click a door.</p>
+              <p><strong>Feedback:</strong> Wrong choice loops; numbers change.</p>
+              <p><strong>Continue:</strong> Reconsider the clues.</p>
+            </article>
+            <article class="storyboard-card">
+              <div class="story-visual story-visual--question" aria-hidden="true">
+                <span>HOME</span><span>EXIT</span><span>???</span>
+              </div>
+              <span class="story-number">04 / Stage 3</span>
+              <h4>Question Everything</h4>
+              <p><strong>Goal:</strong> Make the final choice.</p>
+              <p><strong>Input:</strong> Click one door.</p>
+              <p><strong>Feedback:</strong> Space distorts, then stabilizes.</p>
+              <p><strong>Continue:</strong> Move toward the ending.</p>
+            </article>
+            <article class="storyboard-card">
+              <div class="story-visual story-visual--ending" aria-hidden="true">
+                <strong>YOU FOUND HOME</strong><span>27 → 28</span>
+              </div>
+              <span class="story-number">05 / Ending</span>
+              <h4>Did You Find Home?</h4>
+              <p><strong>Goal:</strong> Leave the hallway.</p>
+              <p><strong>Input:</strong> No input required.</p>
+              <p><strong>Feedback:</strong> Morning light; number changes.</p>
+              <p><strong>Continue:</strong> Restart.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="proposal-section page-shell" id="style-sound" aria-labelledby="style-title">
+        <div class="section-heading">
+          <p class="section-kicker">06 / Style and sound guide</p>
+          <h2 id="style-title">A familiar hallway with an unstable center.</h2>
+          <p>
+            The visual design begins warm, symmetrical, restrained, and believable. Hallucination
+            appears through small contradictions in information—not through constant glitch effects.
+          </p>
+        </div>
+
+        <div class="palette" aria-label="Color palette">
+          <div style="--swatch:#d6a85f"><span>Warm Amber</span><code>#D6A85F</code><small>Familiarity / apparent safety</small></div>
+          <div style="--swatch:#252321"><span>Charcoal</span><code>#252321</code><small>Hallway darkness</small></div>
+          <div style="--swatch:#d8d0c2"><span>Muted Cream</span><code>#D8D0C2</code><small>Walls / neutral surfaces</small></div>
+          <div style="--swatch:#7b3030"><span>Deep Red</span><code>#7B3030</code><small>Warning / doubt</small></div>
+          <div style="--swatch:#52667a"><span>Cold Blue</span><code>#52667A</code><small>Unreliable perception</small></div>
+        </div>
+
+        <div class="guide-grid">
+          <article>
+            <span class="card-label">Typography</span>
+            <h3 class="type-sample">INTER / <em>Georgia</em></h3>
+            <p>
+              Inter and the existing portfolio sans-serif keep instructions legible. A restrained
+              serif italic is reserved for reflective questions and editorial contrast.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Interface</span>
+            <h3>Only what the player needs</h3>
+            <p>
+              Hallway, three doors, environmental clues, and one short instruction. No score,
+              inventory, or complicated HUD.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Motion</span>
+            <h3>Contradiction, not decoration</h3>
+            <p>
+              Stable in Stage 1; small flicker and number changes in Stage 2; slight extension and
+              label displacement in Stage 3. Reduced-motion mode removes nonessential movement.
+            </p>
+          </article>
+          <article>
+            <span class="card-label">Sound</span>
+            <h3>Silence makes the ending legible</h3>
+            <p>
+              Ventilation hum, electrical buzz, footsteps, latch, hinge, low wrong-choice tone, and
+              soft morning ambience. Sound remains off by default and user-controlled.
+            </p>
+          </article>
+        </div>
+
+        <div class="sound-sequence" aria-label="Planned sound sequence">
+          <div><span>01</span><strong>Hallway</strong><small>Hum · electrical buzz · room tone</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>02</span><strong>Choice</strong><small>Latch · hinge · room-tone shift</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>03</span><strong>Wrong door</strong><small>Low tone · close · return</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>04</span><strong>Ending</strong><small>Silence · morning · one low tone</small></div>
+        </div>
+
+        <div class="reference-grid">
+          <article>
+            <span class="card-label">Interaction reference</span>
+            <h3>Geometric Somnium</h3>
+            <p>
+              The action-to-consequence uncertainty informs the design lesson: an invitation to
+              interact is not automatically trustworthy. Visual style is not copied.
+            </p>
+            <a class="text-link" href="https://chezz-studios.itch.io/geometric-somnium" target="_blank" rel="noopener">Chezz Studios / official page ↗</a>
+          </article>
+          <article>
+            <span class="card-label">Visual system reference</span>
+            <h3>Fandi Siribon’s portfolio</h3>
+            <p>
+              Dark blue-green ground, warm white typography, editorial scale, fine dividers, and
+              generous spacing connect this proposal to the existing portfolio.
+            </p>
+            <a class="text-link" href="index.html">Existing portfolio / internal reference →</a>
+          </article>
+          <article>
+            <span class="card-label">Sound method</span>
+            <h3>Browser-generated audio</h3>
+            <p>
+              If audio is added in Week 2 or 3, simple generated tones can avoid reliance on
+              unlicensed files. Advanced sound remains optional.
+            </p>
+            <a class="text-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank" rel="noopener">MDN Web Audio API documentation ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="proposal-section build-section" id="build-plan" aria-labelledby="build-title">
+        <div class="page-shell">
+          <div class="section-heading">
+            <p class="section-kicker">07 / Two-week build plan</p>
+            <h2 id="build-title">Build the complete loop first. Refine only after it reads clearly.</h2>
+            <p>
+              Week 2 produces a complete rough game from opening to ending. Week 3 tests whether
+              first-time players understand the interaction and feel the intended uncertainty.
+            </p>
+          </div>
+
+          <div class="week-grid">
+            <article class="week-card">
+              <span class="week-label">Week 2 / Playable prototype</span>
+              <h3>Build</h3>
+              <ol>
+                <li><strong>Day 1:</strong> Three clickable doors, focus states, correct/incorrect logic, transition, restart, mouse/touch, keyboard.</li>
+                <li><strong>Day 2:</strong> Opening and Stage 1 with numbered doors, warm-light clue, advance, and loop.</li>
+                <li><strong>Day 3:</strong> Stage 2 with EXIT sign, conflicting clues, changing numbers, and subtle flicker.</li>
+                <li><strong>Day 4:</strong> Stage 3 with HOME / EXIT / ???, contradictory clues, and final choice.</li>
+                <li><strong>Day 5:</strong> Morning transition, “YOU FOUND HOME,” 27 → 28, final question, and restart.</li>
+                <li><strong>Weekend:</strong> Desktop, mobile, keyboard, touch, restart, sound-control, and reduced-motion self-test.</li>
+              </ol>
+              <p class="week-outcome"><strong>End of Week 2:</strong> a complete rough browser game with an opening, three short stages, and an ending.</p>
+            </article>
+
+            <article class="week-card">
+              <span class="week-label">Week 3 / Test + refine + publish</span>
+              <h3>Test</h3>
+              <ol>
+                <li><strong>Understanding:</strong> Can players discover that clicking a door is the main interaction?</li>
+                <li><strong>Trust:</strong> When do they realize the visual clues may be unreliable?</li>
+                <li><strong>Decision:</strong> Why did they choose their final door?</li>
+                <li><strong>Ending:</strong> How do they interpret the changing room number?</li>
+                <li><strong>Refine:</strong> Clue visibility, loops, timing, sound, mobile input, keyboard access, and reduced motion.</li>
+                <li><strong>Publish:</strong> Verify the public URL, responsive layouts, controls, replay, and documented feedback.</li>
+              </ol>
+              <p class="week-outcome"><strong>End of Week 3:</strong> a tested, accessible, published game with intentional revisions.</p>
+            </article>
+          </div>
+
+          <div class="scope-grid">
+            <article>
+              <span>Required</span>
+              <p>Opening, three doors, Stages 1–3, wrong-choice loops, final choice, ending, restart, responsive layout.</p>
+            </article>
+            <article>
+              <span>Optional</span>
+              <p>Advanced footsteps, stereo knocks, elaborate door animation, deeper distortion, alternate ending lines.</p>
+            </article>
+            <article>
+              <span>Cut first</span>
+              <p>Stereo audio, advanced distortion, extra animation, and extra endings. Never cut the complete stage sequence.</p>
+            </article>
+            <article>
+              <span>Success test</span>
+              <p>A first-time player reaches the ending, recognizes unreliable clues by Stage 2, and can explain why the final choice felt uncertain.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="proposal-footer page-shell">
+        <div>
+          <p class="section-kicker">Week 1 proposal</p>
+          <h2>THE WRONG DOOR</h2>
+          <p>Research, critical discussion, concept, journey, style, and build plan prepared for DSC 598 · Fall 2026.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="index.html">← Return to portfolio</a>
+          <a href="#introduction">Back to top ↑</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

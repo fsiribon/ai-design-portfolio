@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The Wrong Door — Week 2 interactive hallway prototype by Fandi Siribon"
+    />
+    <title>The Wrong Door — Week 2 Prototype</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23252321'/%3E%3Cpath d='M18 10h28v48H18z' fill='%23312d28' stroke='%23d6a85f' stroke-width='3'/%3E%3Ccircle cx='39' cy='35' r='3' fill='%23d6a85f'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="the-wrong-door.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#game">Skip to game</a>
+
+    <main class="game" id="game" data-state="opening">
+      <header class="game-topbar">
+        <a href="index.html">← Back to portfolio</a>
+        <p>Week 09 · Hallucination · Week 2 prototype</p>
+      </header>
+
+      <section class="opening" id="opening-screen" aria-labelledby="game-title">
+        <div class="opening__glow" aria-hidden="true"></div>
+        <div class="opening__copy">
+          <p class="eyebrow">Hallway 01 · Week 2 prototype</p>
+          <h1 id="game-title">THE WRONG <em>DOOR</em></h1>
+          <p class="opening__message">Find your door. Go home.</p>
+          <button class="primary-action" id="start-button" type="button">
+            Enter the hallway
+          </button>
+          <p class="input-note">Mouse · touch · keyboard</p>
+        </div>
+      </section>
+
+      <section
+        class="game-stage"
+        id="hallway-one-screen"
+        aria-labelledby="hallway-one-title"
+        hidden
+      >
+        <div class="stage-header">
+          <div>
+            <p class="eyebrow">Hallway 01</p>
+            <h2 id="hallway-one-title">Choose a door.</h2>
+          </div>
+          <p class="stage-control">Click or press Enter / Space</p>
+        </div>
+
+        <div class="hallway" aria-describedby="stage-one-feedback">
+          <div class="hallway__ceiling" aria-hidden="true"></div>
+          <div class="hallway__floor" aria-hidden="true"></div>
+          <div class="hallway__depth" aria-hidden="true"></div>
+
+          <div class="door-row" role="group" aria-label="Three hallway doors">
+            <button
+              class="door"
+              type="button"
+              data-stage="1"
+              data-door="101"
+              aria-label="Door 101"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">101</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door door--clue"
+              type="button"
+              data-stage="1"
+              data-door="102"
+              aria-label="Door 102"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">102</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door"
+              type="button"
+              data-stage="1"
+              data-door="103"
+              aria-label="Door 103"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">103</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="hallway__shade" aria-hidden="true"></div>
+        </div>
+
+        <p class="feedback" id="stage-one-feedback" role="status" aria-live="polite">
+          Find the door that moves you forward.
+        </p>
+      </section>
+
+      <section
+        class="game-stage game-stage--two"
+        id="hallway-two-screen"
+        aria-labelledby="hallway-two-title"
+        hidden
+      >
+        <div class="stage-header">
+          <div>
+            <p class="eyebrow">Hallway 02</p>
+            <h2 id="hallway-two-title">Choose a door.</h2>
+          </div>
+          <p class="stage-control">Click or press Enter / Space</p>
+        </div>
+
+        <div class="hallway hallway--two" aria-describedby="stage-two-feedback">
+          <div class="hallway__ceiling" aria-hidden="true"></div>
+          <div class="hallway__floor" aria-hidden="true"></div>
+          <div class="hallway__depth" aria-hidden="true"></div>
+          <p class="exit-sign" aria-label="Exit points toward Door 203">
+            EXIT <span aria-hidden="true">→</span>
+          </p>
+
+          <div class="door-row" role="group" aria-label="Three hallway doors">
+            <button
+              class="door"
+              id="stage-two-left-door"
+              type="button"
+              data-stage="2"
+              data-door="201"
+              aria-label="Door 201"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">201</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door door--clue"
+              type="button"
+              data-stage="2"
+              data-door="202"
+              aria-label="Door 202"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">202</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door"
+              type="button"
+              data-stage="2"
+              data-door="203"
+              aria-label="Door 203"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">203</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="hallway__shade" aria-hidden="true"></div>
+        </div>
+
+        <p class="feedback" id="stage-two-feedback" role="status" aria-live="polite">
+          Find the door that moves you forward.
+        </p>
+      </section>
+
+      <section
+        class="game-stage game-stage--three"
+        id="hallway-three-screen"
+        aria-labelledby="hallway-three-title"
+        hidden
+      >
+        <div class="stage-header">
+          <div>
+            <p class="eyebrow">Hallway 03</p>
+            <h2 id="hallway-three-title">Choose a door.</h2>
+          </div>
+          <p class="stage-control">Click or press Enter / Space</p>
+        </div>
+
+        <div class="hallway hallway--three" aria-describedby="stage-three-feedback">
+          <div class="hallway__ceiling" aria-hidden="true"></div>
+          <div class="hallway__floor" aria-hidden="true"></div>
+          <div class="hallway__depth" aria-hidden="true"></div>
+          <p
+            class="exit-sign exit-sign--three"
+            id="stage-three-exit-sign"
+            aria-label="Exit sign points toward the EXIT door"
+          >
+            EXIT <span id="stage-three-exit-arrow" aria-hidden="true">↓</span>
+          </p>
+
+          <div class="door-row" role="group" aria-label="Three hallway doors">
+            <button
+              class="door door--clue"
+              id="stage-three-home-door"
+              type="button"
+              data-stage="3"
+              data-door="HOME"
+              aria-label="Door HOME"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">HOME</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door"
+              id="stage-three-exit-door"
+              type="button"
+              data-stage="3"
+              data-door="EXIT"
+              aria-label="Door EXIT"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">EXIT</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+
+            <button
+              class="door"
+              id="stage-three-unknown-door"
+              type="button"
+              data-stage="3"
+              data-door="UNKNOWN"
+              aria-label="Door unknown"
+            >
+              <span class="door__leaf" aria-hidden="true">
+                <span class="door__number">???</span>
+                <span class="door__panel"></span>
+                <span class="door__handle"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="hallway__shade" aria-hidden="true"></div>
+        </div>
+
+        <p class="feedback" id="stage-three-feedback" role="status" aria-live="polite">
+          Find the door that moves you forward.
+        </p>
+      </section>
+
+      <section class="failed" id="failed-screen" aria-labelledby="failed-title" hidden>
+        <div class="failed__corridor" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="failed__copy">
+          <h2 id="failed-title" tabindex="-1">WRONG DOOR.</h2>
+          <p>YOU LOST YOUR WAY.</p>
+          <button class="primary-action" id="start-over-button" type="button">
+            Start over
+          </button>
+        </div>
+      </section>
+
+      <section class="ending" id="ending-screen" aria-labelledby="ending-title" hidden>
+        <div class="ending__light" aria-hidden="true"></div>
+        <div class="ending__door" aria-hidden="true">
+          <span class="ending__number" id="ending-door-number">27</span>
+          <span class="ending__handle"></span>
+        </div>
+        <div class="ending__copy">
+          <p class="eyebrow">Morning, perhaps</p>
+          <h2 id="ending-title" tabindex="-1">YOU FOUND HOME.</h2>
+          <p class="ending__question" id="ending-question" hidden>
+            Did you find the right door,<br />
+            or did it become the right door?
+          </p>
+          <button class="primary-action" id="play-again-button" type="button" hidden>
+            Play again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="the-wrong-door.js"></script>
+  </body>
+</html>

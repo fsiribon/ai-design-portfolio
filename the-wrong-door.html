@@ -20,13 +20,19 @@
     <main class="game" id="game" data-state="opening">
       <header class="game-topbar">
         <a href="index.html">← Back to portfolio</a>
-        <p>Week 09 · Hallucination · Week 2 prototype</p>
+        <div class="game-topbar__meta">
+          <p>Week 09 · Hallucination · Week 2 prototype</p>
+          <span>Observe · Remember · Choose</span>
+        </div>
       </header>
 
       <section class="opening" id="opening-screen" aria-labelledby="game-title">
+        <div class="opening__architecture" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
         <div class="opening__glow" aria-hidden="true"></div>
         <div class="opening__copy">
-          <p class="eyebrow">Hallway 01 · Week 2 prototype</p>
+          <p class="eyebrow">A study in unreliable perception</p>
           <h1 id="game-title">THE WRONG <em>DOOR</em></h1>
           <p class="opening__message">Find your door. Go home.</p>
           <button class="primary-action" id="start-button" type="button">
@@ -44,16 +50,26 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 01</p>
+            <p class="eyebrow">Hallway 01 / 03 · Familiar</p>
             <h2 id="hallway-one-title">Choose a door.</h2>
           </div>
-          <p class="stage-control">Click or press Enter / Space</p>
+          <div class="stage-hud" aria-label="Hallway 1 of 3">
+            <span class="stage-hud__marks" aria-hidden="true">◇ ◇ ◇</span>
+            <span class="stage-control">Click or press Enter / Space</span>
+          </div>
         </div>
 
         <div class="hallway" aria-describedby="stage-one-feedback">
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__details" aria-hidden="true">
+            <span class="hallway__cornice"></span>
+            <span class="hallway__sconce hallway__sconce--left"></span>
+            <span class="hallway__sconce hallway__sconce--right"></span>
+            <span class="hallway__echo"></span>
+            <span class="hallway__fracture"></span>
+          </div>
 
           <div class="door-row" role="group" aria-label="Three hallway doors">
             <button
@@ -115,16 +131,26 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 02</p>
+            <p class="eyebrow">Hallway 02 / 03 · Uncertain</p>
             <h2 id="hallway-two-title">Choose a door.</h2>
           </div>
-          <p class="stage-control">Click or press Enter / Space</p>
+          <div class="stage-hud" aria-label="Hallway 2 of 3, one hallway completed">
+            <span class="stage-hud__marks" aria-hidden="true">◆ ◇ ◇</span>
+            <span class="stage-control">Click or press Enter / Space</span>
+          </div>
         </div>
 
         <div class="hallway hallway--two" aria-describedby="stage-two-feedback">
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__details" aria-hidden="true">
+            <span class="hallway__cornice"></span>
+            <span class="hallway__sconce hallway__sconce--left"></span>
+            <span class="hallway__sconce hallway__sconce--right"></span>
+            <span class="hallway__echo"></span>
+            <span class="hallway__fracture"></span>
+          </div>
           <p class="exit-sign" aria-label="Exit points toward Door 203">
             EXIT <span aria-hidden="true">→</span>
           </p>
@@ -190,16 +216,26 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 03</p>
+            <p class="eyebrow">Hallway 03 / 03 · Impossible</p>
             <h2 id="hallway-three-title">Choose a door.</h2>
           </div>
-          <p class="stage-control">Click or press Enter / Space</p>
+          <div class="stage-hud" aria-label="Hallway 3 of 3, final decision">
+            <span class="stage-hud__marks" aria-hidden="true">◆ ◆ ◆</span>
+            <span class="stage-control">Click or press Enter / Space</span>
+          </div>
         </div>
 
         <div class="hallway hallway--three" aria-describedby="stage-three-feedback">
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__details" aria-hidden="true">
+            <span class="hallway__cornice"></span>
+            <span class="hallway__sconce hallway__sconce--left"></span>
+            <span class="hallway__sconce hallway__sconce--right"></span>
+            <span class="hallway__echo"></span>
+            <span class="hallway__fracture"></span>
+          </div>
           <p
             class="exit-sign exit-sign--three"
             id="stage-three-exit-sign"

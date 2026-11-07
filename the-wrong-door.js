@@ -14,7 +14,8 @@ const endingQuestion = document.querySelector("#ending-question");
 const stageOneFeedback = document.querySelector("#stage-one-feedback");
 const stageTwoFeedback = document.querySelector("#stage-two-feedback");
 const stageThreeFeedback = document.querySelector("#stage-three-feedback");
-const stageTwoLeftDoor = document.querySelector("#stage-two-left-door");
+const stageTwo201Door = document.querySelector('[data-stage="2"][data-door="201"]');
+const stageTwoExitSign = hallwayTwoScreen.querySelector(".exit-sign");
 const stageThreeHomeDoor = document.querySelector("#stage-three-home-door");
 const stageThreeExitSign = document.querySelector("#stage-three-exit-sign");
 const stageThreeExitArrow = document.querySelector("#stage-three-exit-arrow");
@@ -48,6 +49,12 @@ const stageData = {
     state: "hallway-three",
   },
 };
+const stageDoorRows = {
+  1: hallwayOneScreen.querySelector(".door-row"),
+  2: hallwayTwoScreen.querySelector(".door-row"),
+  3: hallwayThreeScreen.querySelector(".door-row"),
+};
+const previousDoorOrders = new Map();
 
 let isResolving = false;
 const feedbackTimers = new Map();
@@ -104,8 +111,60 @@ function setPassageOrigin(screen, doors, selectedDoor) {
 }
 
 function resetStageTwoNumber() {
-  stageTwoLeftDoor.querySelector(".door__number").textContent = "201";
-  stageTwoLeftDoor.setAttribute("aria-label", "Door 201");
+  stageTwo201Door.querySelector(".door__number").textContent = "201";
+  stageTwo201Door.setAttribute("aria-label", "Door 201");
+}
+
+function shuffledDoorOrder(doors, previousOrder) {
+  let shuffled;
+  let orderKey;
+
+  do {
+    shuffled = [...doors];
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+    }
+
+    orderKey = shuffled.map((door) => door.dataset.door).join("|");
+  } while (doors.length > 1 && orderKey === previousOrder);
+
+  return { shuffled, orderKey };
+}
+
+function randomizeStageDoorOrder(stage) {
+  const doors = stageData[stage].doors;
+  const { shuffled, orderKey } = shuffledDoorOrder(doors, previousDoorOrders.get(stage));
+
+  shuffled.forEach((door) => stageDoorRows[stage].append(door));
+  doors.splice(0, doors.length, ...shuffled);
+  previousDoorOrders.set(stage, orderKey);
+}
+
+function positionExitSign(stage, doorIdentity, sign) {
+  const doors = stageData[stage].doors;
+  const doorIndex = doors.findIndex((door) => door.dataset.door === doorIdentity);
+  const positions = ["left", "center", "right"];
+  const arrows = ["←", "↓", "→"];
+  const position = positions[doorIndex];
+  const arrow = arrows[doorIndex];
+  const arrowElement = sign.querySelector("span");
+  const doorLabel = doorIdentity === "UNKNOWN" ? "unknown" : doorIdentity;
+  const accessibleDirection =
+    position === "center"
+      ? `Exit sign points down toward the center Door ${doorLabel}`
+      : `Exit sign points ${position} toward Door ${doorLabel}`;
+
+  sign.dataset.position = position;
+  sign.setAttribute("aria-label", accessibleDirection);
+  arrowElement.textContent = arrow;
+}
+
+function randomizeRunLayout() {
+  [1, 2, 3].forEach(randomizeStageDoorOrder);
+  positionExitSign(2, "203", stageTwoExitSign);
+  positionExitSign(3, "EXIT", stageThreeExitSign);
 }
 
 function setStageThreeClue(doorWithClue = null) {
@@ -150,6 +209,11 @@ function showOpening() {
   openingScreen.hidden = false;
   game.dataset.state = "opening";
   focusNext(startButton);
+}
+
+function startNewRun() {
+  showOpening();
+  randomizeRunLayout();
 }
 
 function showHallwayOne() {
@@ -272,6 +336,7 @@ async function chooseDoor(event) {
 }
 
 startButton.addEventListener("click", showHallwayOne);
-startOverButton.addEventListener("click", showOpening);
-playAgainButton.addEventListener("click", showOpening);
+startOverButton.addEventListener("click", startNewRun);
+playAgainButton.addEventListener("click", startNewRun);
 allDoors.forEach((door) => door.addEventListener("click", chooseDoor));
+startNewRun();

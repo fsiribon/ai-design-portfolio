@@ -1,16 +1,18 @@
 :root {
   color-scheme: dark;
-  --hallway-bg: #354347;
-  --hallway-deep: #182225;
-  --hallway-black: #151817;
-  --door-surface: #252321;
-  --door-panel: #302d29;
-  --cream: #d8d0c2;
-  --white: #f7f5ef;
-  --amber: #d6a85f;
-  --blue: #52667a;
-  --line: rgba(216, 208, 194, 0.3);
-  --muted: #abb6b7;
+  --hallway-bg: #182326;
+  --hallway-deep: #101819;
+  --hallway-black: #090d0e;
+  --door-surface: #191613;
+  --door-panel: #2a211a;
+  --cream: #dfd6c7;
+  --white: #f8f4eb;
+  --amber: #c6a568;
+  --bronze: #8f7048;
+  --walnut: #2d211a;
+  --blue: #3c5960;
+  --line: rgba(215, 199, 170, 0.26);
+  --muted: #aab5b4;
 }
 
 * {
@@ -361,6 +363,24 @@ a:focus-visible {
   min-width: 0.9em;
   margin-left: 0.25rem;
   text-align: center;
+}
+
+.exit-sign[data-position] {
+  right: auto;
+  left: var(--exit-position);
+  transform: translateX(-50%);
+}
+
+.exit-sign[data-position="left"] {
+  --exit-position: 16.666%;
+}
+
+.exit-sign[data-position="center"] {
+  --exit-position: 50%;
+}
+
+.exit-sign[data-position="right"] {
+  --exit-position: 83.333%;
 }
 
 .door-row {
@@ -808,6 +828,565 @@ a:focus-visible {
   }
 }
 
+/* Week 2 visual atmosphere upgrade: luxury architectural hallucination */
+.game {
+  background:
+    radial-gradient(circle at 72% -10%, rgba(198, 165, 104, 0.12), transparent 34rem),
+    linear-gradient(145deg, #121c1e 0%, #1b292c 52%, #11191b 100%);
+}
+
+.game::before {
+  background:
+    linear-gradient(90deg, rgba(198, 165, 104, 0.024) 1px, transparent 1px),
+    linear-gradient(rgba(223, 214, 199, 0.018) 1px, transparent 1px);
+  background-size: 5rem 100%, 100% 4rem;
+  opacity: 0.7;
+}
+
+.game-topbar {
+  min-height: 5.8rem;
+  border-bottom-color: rgba(198, 165, 104, 0.3);
+  background: rgba(8, 13, 14, 0.7);
+  box-shadow: 0 1rem 3rem rgba(2, 5, 6, 0.14);
+  backdrop-filter: blur(1rem);
+}
+
+.game-topbar__meta {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: end;
+}
+
+.game-topbar__meta span {
+  color: var(--amber);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.opening {
+  z-index: 0;
+  min-height: calc(100svh - 5.8rem);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(7, 11, 12, 0.8) 0%, rgba(8, 12, 13, 0.24) 34%, rgba(8, 12, 13, 0.18) 66%, rgba(7, 11, 12, 0.78) 100%),
+    linear-gradient(180deg, rgba(5, 8, 9, 0.1) 0%, rgba(5, 8, 9, 0.08) 52%, rgba(5, 8, 9, 0.72) 100%),
+    url("Assets/hallucination/wrong-door-luxury-corridor.png") center 42% / cover no-repeat;
+  isolation: isolate;
+}
+
+.opening::before {
+  z-index: 0;
+  inset: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  background:
+    radial-gradient(ellipse at 50% 54%, transparent 0 20%, rgba(5, 8, 9, 0.2) 52%, rgba(5, 8, 9, 0.72) 100%),
+    linear-gradient(90deg, transparent 49.85%, rgba(224, 194, 132, 0.22) 50%, transparent 50.15%);
+  box-shadow: none;
+  content: "";
+  opacity: 1;
+}
+
+.opening::after {
+  z-index: 1;
+  right: 8%;
+  bottom: -25%;
+  left: 8%;
+  width: auto;
+  height: 52%;
+  border: 0;
+  background: radial-gradient(ellipse at 50% 15%, rgba(198, 165, 104, 0.16), transparent 64%);
+  box-shadow: none;
+  content: "";
+  opacity: 1;
+  filter: blur(1.5rem);
+}
+
+.opening__architecture {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  pointer-events: none;
+}
+
+.opening__architecture span {
+  position: relative;
+  border-inline: 1px solid rgba(198, 165, 104, 0.12);
+  background: linear-gradient(180deg, transparent 68%, rgba(9, 13, 14, 0.14));
+}
+
+.opening__architecture span::before {
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: #efd49a;
+  box-shadow: 0 0 0.8rem 0.3rem rgba(210, 174, 102, 0.34);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.opening__copy {
+  position: relative;
+  z-index: 3;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border: 1px solid rgba(215, 199, 170, 0.16);
+  background: linear-gradient(145deg, rgba(8, 12, 13, 0.72), rgba(12, 17, 18, 0.42));
+  box-shadow: 0 2.5rem 7rem rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(0.65rem);
+}
+
+.opening h1 {
+  text-shadow: 0 0.12em 0.5em rgba(0, 0, 0, 0.46);
+}
+
+.opening h1 em {
+  color: #d4b67d;
+}
+
+.opening__message {
+  text-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.8);
+}
+
+.opening__glow {
+  z-index: 2;
+  height: 40%;
+  background: radial-gradient(ellipse at 50% 100%, rgba(214, 174, 96, 0.2), transparent 54%);
+}
+
+.primary-action {
+  border-color: #d0ad6b;
+  background: linear-gradient(180deg, #d4b578, #b99152);
+  box-shadow: 0 0.8rem 2rem rgba(5, 8, 9, 0.3), inset 0 1px rgba(255, 255, 255, 0.24);
+}
+
+.stage-header {
+  min-height: 5.2rem;
+  padding-inline: 0.15rem;
+}
+
+.stage-header h2 {
+  font-size: clamp(1.55rem, 2.35vw, 2.45rem);
+  letter-spacing: -0.03em;
+}
+
+.stage-hud {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: end;
+}
+
+.stage-hud__marks {
+  color: var(--amber);
+  font-size: 0.84rem;
+  letter-spacing: 0.28em;
+  text-shadow: 0 0 1rem rgba(198, 165, 104, 0.38);
+}
+
+.hallway {
+  min-height: 27rem;
+  border-color: rgba(198, 165, 104, 0.46);
+  border-radius: 0.45rem;
+  background:
+    linear-gradient(90deg, rgba(5, 8, 9, 0.74) 0%, rgba(5, 8, 9, 0.08) 24%, rgba(5, 8, 9, 0.08) 76%, rgba(5, 8, 9, 0.74) 100%),
+    linear-gradient(180deg, rgba(9, 12, 12, 0.08) 45%, rgba(9, 12, 12, 0.56) 100%),
+    url("Assets/hallucination/wrong-door-luxury-corridor.png") center center / cover no-repeat;
+  box-shadow:
+    0 2.5rem 7rem rgba(2, 5, 6, 0.55),
+    inset 0 0 0 1px rgba(242, 224, 190, 0.08),
+    inset 0 -5rem 8rem rgba(5, 8, 9, 0.35);
+}
+
+.hallway::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 51%, transparent 0 28%, rgba(5, 8, 9, 0.18) 67%, rgba(5, 8, 9, 0.6) 100%),
+    linear-gradient(90deg, transparent 49.9%, rgba(232, 206, 151, 0.11) 50%, transparent 50.1%);
+  content: "";
+  pointer-events: none;
+}
+
+.hallway__ceiling {
+  inset: 0 0 45%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 15.8%, rgba(222, 198, 147, 0.07) 16%, transparent 16.2% 33%),
+    linear-gradient(180deg, rgba(230, 203, 148, 0.13), transparent 72%);
+}
+
+.hallway__floor {
+  inset: 54% 0 0;
+  background:
+    linear-gradient(73deg, transparent 49.7%, rgba(218, 191, 135, 0.15) 50%, transparent 50.3%),
+    linear-gradient(107deg, transparent 49.7%, rgba(218, 191, 135, 0.15) 50%, transparent 50.3%),
+    linear-gradient(180deg, rgba(211, 180, 118, 0.05), rgba(8, 11, 11, 0.48));
+  backdrop-filter: blur(0.4px);
+}
+
+.hallway__depth {
+  inset: 10% 8% 8%;
+  border-color: rgba(218, 191, 135, 0.11);
+  background: radial-gradient(ellipse at 50% 44%, rgba(222, 193, 134, 0.05), transparent 48%);
+  clip-path: polygon(21% 0, 79% 0, 100% 100%, 0 100%);
+}
+
+.hallway__details {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hallway__cornice {
+  position: absolute;
+  top: 7%;
+  right: 2%;
+  left: 2%;
+  height: 0.3rem;
+  border-block: 1px solid rgba(214, 180, 112, 0.32);
+  background: linear-gradient(90deg, transparent, rgba(214, 180, 112, 0.16), transparent);
+  box-shadow: 0 1.3rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.hallway__sconce {
+  position: absolute;
+  top: 24%;
+  width: 0.42rem;
+  height: 2.3rem;
+  border: 1px solid rgba(232, 204, 146, 0.62);
+  border-radius: 999px 999px 0.2rem 0.2rem;
+  background: linear-gradient(180deg, #f2d89d, #9e7544);
+  box-shadow: 0 0 1.4rem 0.35rem rgba(220, 173, 91, 0.25);
+}
+
+.hallway__sconce--left {
+  left: 7.4%;
+}
+
+.hallway__sconce--right {
+  right: 7.4%;
+}
+
+.hallway__echo,
+.hallway__fracture {
+  position: absolute;
+  opacity: 0;
+}
+
+.hallway--two {
+  background:
+    linear-gradient(90deg, rgba(5, 9, 11, 0.8) 0%, rgba(8, 12, 14, 0.12) 23%, rgba(15, 12, 9, 0.12) 74%, rgba(5, 8, 10, 0.8) 100%),
+    linear-gradient(180deg, rgba(31, 57, 65, 0.16) 0 55%, rgba(8, 11, 12, 0.58) 100%),
+    url("Assets/hallucination/wrong-door-luxury-corridor.png") 52% center / 112% 108% no-repeat;
+}
+
+.hallway--two .hallway__ceiling {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 13.8%, rgba(141, 184, 194, 0.08) 14%, transparent 14.3% 29%),
+    linear-gradient(180deg, rgba(105, 153, 161, 0.13), transparent 72%);
+}
+
+.hallway--two .hallway__sconce--right {
+  top: 20%;
+  height: 2.8rem;
+  background: linear-gradient(180deg, #d8c18f, #68878a);
+  box-shadow: 0 0 1.5rem 0.3rem rgba(102, 151, 160, 0.2);
+}
+
+.hallway--two .hallway__echo {
+  top: 13%;
+  right: 12%;
+  width: 19%;
+  height: 68%;
+  border: 1px solid rgba(155, 194, 200, 0.19);
+  box-shadow: -1.2rem 0 0 rgba(20, 35, 38, 0.12), -2.4rem 0 0 rgba(20, 35, 38, 0.07);
+  opacity: 1;
+  transform: skewY(-1.8deg);
+}
+
+.hallway--two .door__leaf {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025), transparent 34%),
+    linear-gradient(180deg, #302821, #201c19);
+}
+
+.hallway--three {
+  background:
+    linear-gradient(90deg, rgba(4, 8, 10, 0.82), rgba(18, 25, 29, 0.1) 30% 70%, rgba(4, 7, 9, 0.84)),
+    linear-gradient(180deg, rgba(45, 62, 70, 0.2), rgba(8, 11, 13, 0.65)),
+    url("Assets/hallucination/wrong-door-luxury-corridor.png") center center / 124% 118% no-repeat;
+}
+
+.hallway--three::before {
+  background:
+    linear-gradient(117deg, transparent 0 60%, rgba(150, 173, 178, 0.12) 60.2%, transparent 60.5%),
+    linear-gradient(63deg, transparent 0 33%, rgba(196, 166, 109, 0.1) 33.2%, transparent 33.5%),
+    radial-gradient(ellipse at 50% 48%, transparent 0 22%, rgba(4, 8, 10, 0.2) 57%, rgba(4, 7, 9, 0.72) 100%);
+}
+
+.hallway--three .hallway__ceiling {
+  inset: -4% -8% 43%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 10%, rgba(174, 190, 191, 0.08) 10.2%, transparent 10.5% 20%),
+    linear-gradient(176deg, rgba(103, 134, 141, 0.14), transparent 74%);
+  transform: perspective(50rem) rotateX(8deg) rotateZ(-0.7deg);
+}
+
+.hallway--three .hallway__floor {
+  inset: 52% -7% -8%;
+  transform: perspective(50rem) rotateX(4deg) rotateZ(0.8deg);
+}
+
+.hallway--three .hallway__echo {
+  top: 6%;
+  left: 50%;
+  width: 20%;
+  height: 58%;
+  border: 1px solid rgba(181, 203, 204, 0.2);
+  border-radius: 50% 50% 0 0;
+  box-shadow:
+    -11rem 1.6rem 0 -1px rgba(12, 22, 25, 0.2),
+    11rem -0.8rem 0 -1px rgba(12, 22, 25, 0.22),
+    0 0 3rem rgba(123, 164, 171, 0.1);
+  opacity: 0.9;
+  transform: translateX(-50%) perspective(40rem) rotateY(-8deg);
+}
+
+.hallway--three .hallway__fracture {
+  top: 12%;
+  right: -3%;
+  width: 23%;
+  height: 74%;
+  border: 1px solid rgba(198, 165, 104, 0.16);
+  box-shadow:
+    -2rem 2rem 0 rgba(7, 13, 15, 0.17),
+    -4rem 4rem 0 rgba(7, 13, 15, 0.1);
+  opacity: 1;
+  transform: skewY(-7deg) rotate(-2deg);
+}
+
+.hallway--three .hallway__sconce--left {
+  top: 18%;
+  transform: rotate(-5deg);
+}
+
+.hallway--three .hallway__sconce--right {
+  top: 31%;
+  transform: rotate(7deg);
+}
+
+.door-row {
+  z-index: 4;
+  bottom: 8.5%;
+  height: 72%;
+  gap: clamp(0.75rem, 5.2vw, 5.5rem);
+}
+
+.door {
+  height: 91%;
+  border-color: #110f0d;
+  border-top-width: clamp(0.45rem, 0.72vw, 0.7rem);
+  border-inline-width: clamp(0.42rem, 0.66vw, 0.64rem);
+  border-bottom-width: 0.3rem;
+  background: #080b0b;
+  box-shadow:
+    0 1.6rem 2.2rem rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(198, 165, 104, 0.2),
+    inset 0 0 1.6rem rgba(0, 0, 0, 0.7);
+}
+
+.door__leaf {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055), transparent 22% 72%, rgba(0, 0, 0, 0.16)),
+    repeating-linear-gradient(90deg, transparent 0 12%, rgba(218, 184, 119, 0.025) 12.5%, transparent 13% 25%),
+    linear-gradient(180deg, #39291f 0%, #241b16 58%, #171310 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(222, 193, 139, 0.18),
+    inset 0.6rem 0 1.2rem rgba(255, 255, 255, 0.025),
+    inset -1rem 0 1.8rem rgba(0, 0, 0, 0.25);
+}
+
+.door__leaf::before {
+  position: absolute;
+  z-index: 0;
+  inset: 4% 5%;
+  border: 1px solid rgba(198, 165, 104, 0.14);
+  box-shadow: inset 0 0 0 0.2rem rgba(10, 8, 7, 0.18);
+  content: "";
+  pointer-events: none;
+}
+
+.door__leaf::after {
+  position: absolute;
+  z-index: 0;
+  top: 17%;
+  right: 13%;
+  left: 13%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(211, 177, 111, 0.36), transparent);
+  content: "";
+}
+
+.door__number {
+  top: 7%;
+  min-width: 4.6rem;
+  padding: 0.34rem 0.55rem;
+  border: 1px solid rgba(198, 165, 104, 0.38);
+  background: rgba(11, 11, 10, 0.64);
+  color: #e6d9c0;
+  box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.22);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.door__panel {
+  inset: 23% 12% 11%;
+  border-color: rgba(198, 165, 104, 0.24);
+  box-shadow:
+    inset 0 0 0 0.25rem rgba(7, 8, 8, 0.16),
+    inset 0 0 2rem rgba(0, 0, 0, 0.23);
+}
+
+.door__handle {
+  right: 8%;
+  width: clamp(0.42rem, 0.72vw, 0.62rem);
+  height: clamp(0.42rem, 0.72vw, 0.62rem);
+  border: 1px solid #f0d491;
+  background: radial-gradient(circle at 35% 30%, #f6dda4, #a67b3f 66%, #5f4223);
+  box-shadow: 0 0 0 0.24rem rgba(198, 165, 104, 0.1), 0 0 1rem rgba(216, 168, 95, 0.42);
+}
+
+.door:hover:not(:disabled) {
+  border-color: #241c15;
+  filter: brightness(1.06);
+}
+
+.door:hover:not(:disabled) .door__leaf {
+  filter: brightness(1.08) saturate(0.96);
+}
+
+.door:hover:not(:disabled) .door__handle {
+  box-shadow: 0 0 0 0.3rem rgba(198, 165, 104, 0.12), 0 0 1.25rem rgba(223, 179, 95, 0.56);
+  transform: scale(0.9) rotate(-8deg);
+}
+
+.door:focus-visible {
+  outline-color: #f0dcae;
+  outline-offset: 0.55rem;
+}
+
+.door--clue {
+  height: 91%;
+}
+
+.hallway--three [data-door="HOME"] .door__leaf {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055), transparent 24% 72%, rgba(0, 0, 0, 0.14)),
+    linear-gradient(180deg, #423126, #251c17 64%, #171310);
+}
+
+.hallway--three [data-door="EXIT"] .door__leaf {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025), transparent 38%),
+    linear-gradient(180deg, #283034, #181d1f 70%, #111516);
+}
+
+.hallway--three [data-door="UNKNOWN"] .door__leaf {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent 36%),
+    linear-gradient(180deg, #2e2925, #1d1a18 70%, #121110);
+}
+
+.exit-sign {
+  top: 6.5%;
+  border-color: rgba(198, 165, 104, 0.4);
+  background: rgba(16, 27, 29, 0.82);
+  box-shadow: 0 0.8rem 2rem rgba(3, 6, 7, 0.35), inset 0 0 1rem rgba(95, 131, 137, 0.08);
+  color: #e4e1d2;
+  backdrop-filter: blur(0.4rem);
+}
+
+.feedback {
+  color: #d8cdbb;
+  letter-spacing: 0.015em;
+  text-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.failed {
+  background:
+    linear-gradient(90deg, rgba(4, 6, 7, 0.92), rgba(8, 11, 12, 0.68) 36% 64%, rgba(4, 6, 7, 0.92)),
+    linear-gradient(180deg, rgba(5, 7, 8, 0.48), rgba(3, 5, 6, 0.94)),
+    url("Assets/hallucination/wrong-door-luxury-corridor.png") center / cover no-repeat;
+}
+
+.failed::before {
+  position: absolute;
+  z-index: -1;
+  inset: -6%;
+  background:
+    linear-gradient(88deg, transparent 47%, rgba(151, 171, 172, 0.06) 47.3%, transparent 47.7%),
+    radial-gradient(ellipse at 50% 52%, transparent 0 16%, rgba(0, 0, 0, 0.62) 62%);
+  content: "";
+  transform: skewX(-1.8deg) rotate(0.5deg);
+}
+
+.failed__corridor {
+  bottom: -16%;
+  height: 72%;
+  opacity: 0.22;
+  transform: perspective(60rem) rotateX(7deg) skewX(-2deg);
+}
+
+.failed__corridor span:nth-child(2) {
+  transform: translateY(-5%) skewY(3deg);
+}
+
+.failed h2 {
+  text-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.68);
+}
+
+.failed__copy {
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(215, 199, 170, 0.13);
+  background: rgba(5, 8, 9, 0.52);
+  box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(0.7rem);
+}
+
+.ending {
+  background:
+    radial-gradient(circle at 70% 12%, rgba(255, 253, 243, 0.92), transparent 32rem),
+    linear-gradient(145deg, #e6ddc9 0%, #d0c7b2 58%, #b8b29e 100%);
+}
+
+.ending::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 12%, rgba(93, 82, 63, 0.04) 12.1%, transparent 12.3% 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 40%);
+  content: "";
+}
+
+.ending__door {
+  border-color: rgba(102, 88, 65, 0.42);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.32), transparent 38%),
+    rgba(231, 222, 201, 0.54);
+}
+
 @media (max-width: 64rem) {
   .game-topbar {
     min-height: 5rem;
@@ -835,8 +1414,9 @@ a:focus-visible {
     padding-bottom: 1rem;
   }
 
-  .game-topbar p {
+  .game-topbar__meta {
     margin-top: 0.65rem;
+    justify-items: start;
   }
 
   .opening,
@@ -845,10 +1425,18 @@ a:focus-visible {
     min-height: calc(100svh - 5.8rem);
   }
 
-  .opening::before,
+  .opening::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+  }
+
   .opening::after {
-    width: 29vw;
-    height: 50vh;
+    right: 5%;
+    bottom: -18%;
+    left: 5%;
+    width: auto;
+    height: 44%;
   }
 
   .opening h1 {
@@ -862,7 +1450,12 @@ a:focus-visible {
 
   .stage-header {
     display: block;
-    min-height: 5.5rem;
+    min-height: 7.2rem;
+  }
+
+  .stage-hud {
+    margin-top: 0.8rem;
+    justify-items: start;
   }
 
   .stage-control {
@@ -873,6 +1466,7 @@ a:focus-visible {
   .hallway {
     height: clamp(26rem, calc(100svh - 14rem), 38rem);
     min-height: 26rem;
+    background-position: center 48%;
   }
 
   .door-row {
@@ -900,6 +1494,15 @@ a:focus-visible {
     right: 7%;
     min-width: 0.38rem;
     min-height: 0.38rem;
+  }
+
+  .door__number {
+    min-width: 0;
+    padding: 0.28rem 0.35rem;
+  }
+
+  .hallway__sconce {
+    opacity: 0.6;
   }
 
   .feedback {
@@ -947,6 +1550,10 @@ a:focus-visible {
   .door__number {
     font-size: 0.68rem;
     letter-spacing: 0.1em;
+  }
+
+  .stage-hud__marks {
+    font-size: 0.72rem;
   }
 }
 

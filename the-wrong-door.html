@@ -24,21 +24,117 @@
           <p>Week 09 · Hallucination · Week 2 prototype</p>
           <span>Observe · Remember · Choose</span>
         </div>
+        <button
+          class="sound-toggle"
+          id="sound-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          Sound off
+        </button>
       </header>
 
-      <section class="opening" id="opening-screen" aria-labelledby="game-title">
-        <div class="opening__architecture" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="opening__glow" aria-hidden="true"></div>
-        <div class="opening__copy">
-          <p class="eyebrow">A study in unreliable perception</p>
-          <h1 id="game-title">THE WRONG <em>DOOR</em></h1>
-          <p class="opening__message">Find your door. Go home.</p>
-          <button class="primary-action" id="start-button" type="button">
-            Enter the hallway
-          </button>
-          <p class="input-note">Mouse · touch · keyboard</p>
+      <section class="opening intro" id="opening-screen" aria-labelledby="game-title">
+        <nav class="intro-progress" aria-label="Introduction progress">
+          <a href="#intro-arrival" data-intro-link="arrival" aria-current="step">
+            <span>01</span><small>Arrival</small>
+          </a>
+          <a href="#intro-language" data-intro-link="language">
+            <span>02</span><small>Observe</small>
+          </a>
+          <a href="#intro-threshold" data-intro-link="threshold">
+            <span>03</span><small>Enter</small>
+          </a>
+        </nav>
+
+        <section
+          class="intro-chapter intro-chapter--arrival is-visible"
+          id="intro-arrival"
+          data-intro-chapter="arrival"
+          aria-labelledby="game-title"
+        >
+          <div class="intro-scene" aria-hidden="true">
+            <span class="intro-scene__ceiling"></span>
+            <span class="intro-scene__floor"></span>
+            <span class="intro-scene__light"></span>
+            <span class="intro-scene__number">117</span>
+            <span class="intro-scene__dust intro-scene__dust--one"></span>
+            <span class="intro-scene__dust intro-scene__dust--two"></span>
+            <span class="intro-figure"></span>
+          </div>
+          <div class="intro-chapter__copy intro-chapter__copy--arrival">
+            <p class="eyebrow">A study in unreliable perception</p>
+            <h1 id="game-title" tabindex="-1"><span>THE</span><span>WRONG</span><em>DOOR</em></h1>
+            <p class="intro-chapter__lead">You only need to find your way home.</p>
+          </div>
+          <a class="intro-scroll-cue" href="#intro-language">
+            Scroll to enter <span aria-hidden="true">↓</span>
+          </a>
+        </section>
+
+        <section
+          class="intro-chapter intro-chapter--language"
+          id="intro-language"
+          data-intro-chapter="language"
+          aria-labelledby="language-title"
+        >
+          <div class="intro-scene" aria-hidden="true">
+            <span class="intro-scene__ceiling"></span>
+            <span class="intro-scene__floor"></span>
+            <span class="intro-scene__light intro-scene__light--displaced"></span>
+            <span class="intro-scene__number">171</span>
+            <span class="intro-scene__exit">EXIT <b>←</b></span>
+          </div>
+          <div class="intro-chapter__copy intro-chapter__copy--language">
+            <p class="eyebrow">Learn the language</p>
+            <h2 id="language-title">THE HALLWAY<br />WILL HELP YOU.</h2>
+            <p class="intro-afterthought">At first.</p>
+            <div class="intro-principles">
+              <article>
+                <span>01</span><h3>Observe</h3><p>Light leaves clues.</p>
+              </article>
+              <article>
+                <span>02</span><h3>Remember</h3><p>The hallway may change.</p>
+              </article>
+              <article>
+                <span>03</span><h3>Choose</h3><p>One wrong door ends the run.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="intro-chapter intro-chapter--threshold"
+          id="intro-threshold"
+          data-intro-chapter="threshold"
+          aria-labelledby="threshold-title"
+        >
+          <div class="intro-scene" aria-hidden="true">
+            <span class="intro-scene__ceiling"></span>
+            <span class="intro-scene__floor"></span>
+            <span class="intro-scene__light intro-scene__light--reflection"></span>
+            <span class="intro-scene__exit">EXIT <b>→</b></span>
+            <span class="intro-figure intro-figure--threshold"></span>
+          </div>
+          <div class="intro-chapter__copy intro-chapter__copy--threshold">
+            <h2 id="threshold-title">
+              <span>TRUST<br />WHAT YOU NOTICE.</span>
+              <span>QUESTION<br />WHAT YOU REMEMBER.</span>
+              <span>NOT EVERY SIGN<br />WANTS YOU TO LEAVE.</span>
+            </h2>
+            <div class="intro-controls" aria-label="Game controls">
+              <p><strong>Mouse / Touch</strong><span>Choose a door</span></p>
+              <p><strong>Tab</strong><span>Move between doors</span></p>
+              <p><strong>Enter / Space</strong><span>Open selected door</span></p>
+            </div>
+            <button class="primary-action intro-enter" id="start-button" type="button">
+              Enter the hallway <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="intro-transition" aria-hidden="true">
+          <span></span>
         </div>
       </section>
 
@@ -50,7 +146,7 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 01 / 03 · Familiar</p>
+            <p class="eyebrow">Hallway 01 / 03 · Learn to observe</p>
             <h2 id="hallway-one-title">Choose a door.</h2>
           </div>
           <div class="stage-hud" aria-label="Hallway 1 of 3">
@@ -63,12 +159,26 @@
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__architecture" aria-hidden="true">
+            <span class="hallway__wall hallway__wall--left"></span>
+            <span class="hallway__wall hallway__wall--right"></span>
+            <span class="hallway__back-wall"></span>
+            <span class="hallway__runner"></span>
+          </div>
           <div class="hallway__details" aria-hidden="true">
             <span class="hallway__cornice"></span>
             <span class="hallway__sconce hallway__sconce--left"></span>
             <span class="hallway__sconce hallway__sconce--right"></span>
             <span class="hallway__echo"></span>
-            <span class="hallway__fracture"></span>
+          </div>
+          <div class="player-figure" aria-hidden="true">
+            <span class="player-figure__shadow"></span>
+            <span class="player-figure__head"></span>
+            <span class="player-figure__torso"></span>
+            <span class="player-figure__arm player-figure__arm--left"></span>
+            <span class="player-figure__arm player-figure__arm--right"></span>
+            <span class="player-figure__leg player-figure__leg--left"></span>
+            <span class="player-figure__leg player-figure__leg--right"></span>
           </div>
 
           <div class="door-row" role="group" aria-label="Three hallway doors">
@@ -131,7 +241,7 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 02 / 03 · Uncertain</p>
+            <p class="eyebrow">Hallway 02 / 03 · Question the clues</p>
             <h2 id="hallway-two-title">Choose a door.</h2>
           </div>
           <div class="stage-hud" aria-label="Hallway 2 of 3, one hallway completed">
@@ -144,12 +254,27 @@
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__architecture" aria-hidden="true">
+            <span class="hallway__wall hallway__wall--left"></span>
+            <span class="hallway__wall hallway__wall--right"></span>
+            <span class="hallway__back-wall"></span>
+            <span class="hallway__runner"></span>
+          </div>
           <div class="hallway__details" aria-hidden="true">
             <span class="hallway__cornice"></span>
             <span class="hallway__sconce hallway__sconce--left"></span>
             <span class="hallway__sconce hallway__sconce--right"></span>
             <span class="hallway__echo"></span>
             <span class="hallway__fracture"></span>
+          </div>
+          <div class="player-figure" aria-hidden="true">
+            <span class="player-figure__shadow"></span>
+            <span class="player-figure__head"></span>
+            <span class="player-figure__torso"></span>
+            <span class="player-figure__arm player-figure__arm--left"></span>
+            <span class="player-figure__arm player-figure__arm--right"></span>
+            <span class="player-figure__leg player-figure__leg--left"></span>
+            <span class="player-figure__leg player-figure__leg--right"></span>
           </div>
           <p class="exit-sign" aria-label="Exit points toward Door 203">
             EXIT <span aria-hidden="true">→</span>
@@ -216,7 +341,7 @@
       >
         <div class="stage-header">
           <div>
-            <p class="eyebrow">Hallway 03 / 03 · Impossible</p>
+            <p class="eyebrow">Hallway 03 / 03 · Do not trust the clues</p>
             <h2 id="hallway-three-title">Choose a door.</h2>
           </div>
           <div class="stage-hud" aria-label="Hallway 3 of 3, final decision">
@@ -229,12 +354,27 @@
           <div class="hallway__ceiling" aria-hidden="true"></div>
           <div class="hallway__floor" aria-hidden="true"></div>
           <div class="hallway__depth" aria-hidden="true"></div>
+          <div class="hallway__architecture" aria-hidden="true">
+            <span class="hallway__wall hallway__wall--left"></span>
+            <span class="hallway__wall hallway__wall--right"></span>
+            <span class="hallway__back-wall"></span>
+            <span class="hallway__runner"></span>
+          </div>
           <div class="hallway__details" aria-hidden="true">
             <span class="hallway__cornice"></span>
             <span class="hallway__sconce hallway__sconce--left"></span>
             <span class="hallway__sconce hallway__sconce--right"></span>
             <span class="hallway__echo"></span>
             <span class="hallway__fracture"></span>
+          </div>
+          <div class="player-figure" aria-hidden="true">
+            <span class="player-figure__shadow"></span>
+            <span class="player-figure__head"></span>
+            <span class="player-figure__torso"></span>
+            <span class="player-figure__arm player-figure__arm--left"></span>
+            <span class="player-figure__arm player-figure__arm--right"></span>
+            <span class="player-figure__leg player-figure__leg--left"></span>
+            <span class="player-figure__leg player-figure__leg--right"></span>
           </div>
           <p
             class="exit-sign exit-sign--three"
@@ -306,6 +446,7 @@
         <div class="failed__copy">
           <h2 id="failed-title" tabindex="-1">WRONG DOOR.</h2>
           <p>YOU LOST YOUR WAY.</p>
+          <p class="failed__hint" id="failed-hint" hidden></p>
           <button class="primary-action" id="start-over-button" type="button">
             Start over
           </button>

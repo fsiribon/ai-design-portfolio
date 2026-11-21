@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SERPENT: THE LIVING PATH — interactive final project by Fandi Siribon"
+    />
+    <title>SERPENT: THE LIVING PATH — Fandi Siribon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="kereta-malam.css" />
+    <link rel="stylesheet" href="serpent-project.css" />
+  </head>
+  <body>
+    <main class="project-page serpent-page">
+      <nav class="project-nav page-shell serpent-top-nav" aria-label="Project navigation">
+        <a href="index.html"><span aria-hidden="true">←</span> Back to Home</a>
+        <a href="serpent-living-path.html">Play Game <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <header class="project-hero serpent-hero page-shell">
+        <p class="project-meta">Interactive Game · Final Project</p>
+        <h1>SERPENT: THE LIVING PATH</h1>
+        <p class="serpent-concept">The more you consume, the harder you become to control.</p>
+        <p class="project-introduction">
+          SERPENT: THE LIVING PATH is an atmospheric fantasy survival game in which the
+          player guides a living serpent through an ancient kingdom. The serpent travels
+          forward automatically while the player steers through broken architectural
+          passages, identifies the correct elemental target, and avoids deadly collisions.
+          As the journey progresses, the rules change: fire gives way to water, then gold,
+          while previously safe elements become dangerous. Every five correct collections
+          increase the serpent's speed, turning movement, memory, and perception into a
+          progressively harder survival challenge.
+        </p>
+        <a class="serpent-play-button" href="serpent-living-path.html">
+          Play Game <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <section class="serpent-visual page-shell" aria-label="Game visual">
+        <a href="serpent-living-path.html" aria-label="Launch SERPENT: THE LIVING PATH">
+          <img
+            src="Assets/serpent/serpent-level-1-awakening.png"
+            alt="Realistic turquoise serpent approaching glowing fire between broken columns in a moonlit fantasy kingdom"
+          />
+          <span>Enter the kingdom <b aria-hidden="true">↗</b></span>
+        </a>
+      </section>
+
+      <section class="case-section serpent-levels page-shell" aria-labelledby="levels-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Three progressive stages</p>
+          <h2 id="levels-title">Deeper into the kingdom.</h2>
+        </div>
+        <div class="level-grid">
+          <article class="level-card level-card--fire">
+            <span class="level-number">Level 1</span>
+            <h3>Awakening</h3>
+            <p class="level-target"><b aria-hidden="true">🔥</b> Seek Fire</p>
+            <p>The journey begins outside the kingdom. Navigate broken passages and collect 10 glowing fire elements.</p>
+            <dl class="level-rules">
+              <div><dt>Fire</dt><dd>Safe</dd></div>
+              <div><dt>Goal</dt><dd>10 Fire</dd></div>
+            </dl>
+          </article>
+          <article class="level-card level-card--water">
+            <span class="level-number">Level 2</span>
+            <h3>The Climb</h3>
+            <p class="level-target"><b aria-hidden="true">💧</b> Seek Water</p>
+            <p>The rules change deeper inside the kingdom. Collect 10 water elements while fire remains as a deadly false target.</p>
+            <dl class="level-rules">
+              <div><dt>Water</dt><dd>Safe</dd></div>
+              <div><dt>Fire</dt><dd>Deadly</dd></div>
+              <div><dt>Goal</dt><dd>10 Water</dd></div>
+            </dl>
+          </article>
+          <article class="level-card level-card--gold">
+            <span class="level-number">Level 3</span>
+            <h3>Survival</h3>
+            <p class="level-target"><b aria-hidden="true">◆</b> Seek Gold</p>
+            <p>Collect gold for the highest possible score. Fire and water remain in the world, but both now end the run.</p>
+            <dl class="level-rules">
+              <div><dt>Gold</dt><dd>Safe</dd></div>
+              <div><dt>Water + Fire</dt><dd>Deadly</dd></div>
+              <div><dt>Goal</dt><dd>Survive</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section serpent-rule-change page-shell" aria-labelledby="rules-change-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">The rules change</p>
+          <h2 id="rules-change-title">What saves you once may kill you later.</h2>
+        </div>
+        <div class="rule-change-layout">
+          <p>
+            The game begins by teaching the player to seek fire. In Level 2, that learned
+            behavior becomes dangerous when water becomes the new target. In Level 3,
+            both fire and water become hazards, leaving gold as the only safe collectible.
+          </p>
+          <p class="challenge-formula" aria-label="Movement plus memory plus perception">
+            <span>Movement</span><b>+</b><span>Memory</span><b>+</b><span>Perception</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section serpent-loop page-shell" aria-labelledby="gameplay-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Core gameplay</p>
+          <h2 id="gameplay-title">Reward becomes risk.</h2>
+        </div>
+        <ol class="gameplay-sequence" aria-label="Gameplay sequence">
+          <li>Travel</li>
+          <li>Collect</li>
+          <li>Grow</li>
+          <li>Accelerate</li>
+          <li>Survive</li>
+        </ol>
+        <p class="speed-rule">Every 5 correct collections, you become faster.</p>
+        <p class="speed-subline">The target changes. The danger remembers.</p>
+        <div class="element-progression" aria-label="Element progression from fire to water to gold">
+          <div><b aria-hidden="true">🔥</b><strong>Fire</strong><span>Awakening</span></div>
+          <i aria-hidden="true">↓</i>
+          <div><b aria-hidden="true">💧</b><strong>Water</strong><span>The Climb</span></div>
+          <i aria-hidden="true">↓</i>
+          <div><b aria-hidden="true">◆</b><strong>Gold</strong><span>Survival</span></div>
+        </div>
+      </section>
+
+      <section class="case-section serpent-gallery page-shell" aria-labelledby="gallery-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Progressive environments</p>
+          <h2 id="gallery-title">Three targets. One living path.</h2>
+        </div>
+        <div class="gameplay-gallery">
+          <figure>
+            <img src="Assets/serpent/serpent-level-1-awakening.png" alt="Awakening gameplay with a turquoise serpent, fire targets, moonlight, mountains, and broken columns" />
+            <figcaption><span>Awakening</span><strong>Fire</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="Assets/serpent/serpent-level-2-climb.png" alt="The Climb gameplay with a turquoise serpent, magical water targets, castle architecture, fog, and broken columns" />
+            <figcaption><span>The Climb</span><strong>Water</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="Assets/serpent/serpent-level-3-survival.png" alt="Survival gameplay with a turquoise serpent, gold targets, deadly water decoy, dense castle structures, and narrow broken passages" />
+            <figcaption><span>Survival</span><strong>Gold</strong></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section serpent-systems page-shell" aria-labelledby="systems-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Living systems</p>
+          <h2 id="systems-title">Creature, architecture, and deception.</h2>
+        </div>
+        <div class="system-grid">
+          <article>
+            <span>01</span>
+            <h3>The Living Serpent</h3>
+            <p>The protagonist is a living creature rather than a grid-based Snake character. Its realistic turquoise body carries visible scales and a lighter underside, follows the head with delayed curved motion, grows through collection, and becomes harder to control as speed rises.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Not Every Light Is a Target</h3>
+            <p>Lanterns, castle windows, magical lights, and atmospheric glows compete with the active collectible. Real targets use active motion, stronger glow, and distinct particles; environmental lights remain softer, slower, and non-interactive.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>The Living Kingdom</h3>
+            <p>Monumental architecture, castle structures, mountains, moonlight, moving clouds, layered fog, warm lights, lightning, particles, and false glows create both spatial difficulty and perceptual distraction.</p>
+          </article>
+        </div>
+        <figure class="broken-passage">
+          <img src="Assets/serpent/serpent-level-2-climb.png" alt="Turquoise serpent approaching a narrow opening between fractured upper and lower columns" />
+          <figcaption>
+            <p class="serpent-eyebrow">Broken passages</p>
+            <h3>Steer through the fracture.</h3>
+            <p>Ancient columns fracture across the serpent's path, creating narrow openings that shift vertically and force continuous up-and-down steering.</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section serpent-sound page-shell" aria-labelledby="sound-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Sound of the kingdom</p>
+          <h2 id="sound-title">A journey heard as well as seen.</h2>
+        </div>
+        <div class="sound-layout">
+          <p>
+            The game uses a continuous dark-fantasy soundtrack that combines rhythmic
+            energy with horror atmosphere. The music grows more intense as the serpent
+            moves from Awakening to The Climb and finally Survival, while elemental
+            sounds, serpent hisses, thunder, and collision effects remain layered above
+            the music.
+          </p>
+          <div class="sound-stages">
+            <p><strong>Level 1</strong><span>Mysterious · restrained</span></p>
+            <p><strong>Level 2</strong><span>Deeper · more tense</span></p>
+            <p><strong>Level 3</strong><span>Darkest · most intense</span></p>
+          </div>
+        </div>
+        <div class="element-sounds" aria-label="Element sound identities">
+          <p><strong>Fire</strong><span>Warm flare</span></p>
+          <p><strong>Water</strong><span>Fluid glass tone</span></p>
+          <p><strong>Gold</strong><span>Metallic shimmer</span></p>
+        </div>
+      </section>
+
+      <section class="case-section serpent-controls page-shell" aria-labelledby="controls-title">
+        <div class="serpent-section-heading">
+          <p class="serpent-eyebrow">Controls</p>
+          <h2 id="controls-title">Steer the living path.</h2>
+        </div>
+        <div class="control-grid">
+          <p><strong>W / ↑</strong><span>Move Up</span></p>
+          <p><strong>S / ↓</strong><span>Move Down</span></p>
+          <p><strong>Automatic</strong><span>Forward movement</span></p>
+        </div>
+        <div class="current-objective">
+          <div>
+            <p class="serpent-eyebrow">Watch the target</p>
+            <p><span>Level 1</span><strong>Fire</strong></p>
+            <p><span>Level 2</span><strong>Water</strong></p>
+            <p><span>Level 3</span><strong>Gold</strong></p>
+          </div>
+          <p>Touching an outdated element in Levels 2 or 3 ends the run.</p>
+        </div>
+        <a class="serpent-play-button serpent-play-button--secondary" href="serpent-living-path.html">
+          Play Game <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <nav class="bottom-project-nav page-shell" aria-label="Project navigation">
+        <a href="hallucination-proposal.html">
+          <span aria-hidden="true">←</span> Previous Project — The Wrong Door
+        </a>
+        <a href="index.html">Back to Home <span aria-hidden="true">→</span></a>
+      </nav>
+    </main>
+  </body>
+</html>

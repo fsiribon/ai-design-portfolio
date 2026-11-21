@@ -290,6 +290,15 @@ h1 em {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: 1rem;
+  order: 4;
+}
+
+.project-summary {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
   order: 3;
 }
 

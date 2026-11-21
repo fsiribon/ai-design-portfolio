@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Serpent: The Living Path — an atmospheric browser survival game by Fandi Siribon"
+    />
+    <title>Serpent: The Living Path</title>
+    <link rel="preload" as="image" href="Assets/serpent/environment/serpent-kingdom-level-1.jpg" />
+    <link rel="preload" as="image" href="Assets/serpent/environment/serpent-kingdom-level-2.jpg" />
+    <link rel="preload" as="image" href="Assets/serpent/environment/serpent-kingdom-level-3.jpg" />
+    <link rel="stylesheet" href="serpent-living-path.css" />
+  </head>
+  <body>
+    <main class="game-page">
+      <section class="game-shell" aria-labelledby="game-name">
+        <div
+          class="playfield"
+          id="playfield"
+          tabindex="0"
+          aria-label="Serpent: The Living Path game area. The serpent travels automatically. Use W and S or the up and down arrow keys to steer vertically."
+        >
+          <canvas id="game-canvas" width="1280" height="720" aria-hidden="true"></canvas>
+
+          <div class="audio-controls" aria-label="Audio controls">
+            <button
+              class="sound-toggle"
+              id="sound-toggle"
+              type="button"
+              aria-pressed="true"
+              aria-label="Turn sound off"
+            >
+              Sound on
+            </button>
+            <button
+              class="sound-toggle"
+              id="music-toggle"
+              type="button"
+              aria-pressed="true"
+              aria-label="Turn music off"
+            >
+              Music on
+            </button>
+          </div>
+
+          <div class="hud" id="hud" hidden aria-label="Game status">
+            <div class="hud__group">
+              <span class="hud__eyebrow" id="level-label">Level 1</span>
+              <span class="hud__objective" id="target-label">Target: Fire</span>
+              <strong class="hud__progress" id="target-progress">Fire 0 / 10</strong>
+              <strong class="hud__value">Score <span id="score-value">0</span></strong>
+            </div>
+            <div class="hud__group hud__group--right">
+              <span class="hud__eyebrow">Living path</span>
+              <strong class="hud__value">Best <span id="best-value">0</span></strong>
+            </div>
+          </div>
+
+          <div class="screen screen--start" id="start-screen">
+            <div class="screen__content screen__content--start">
+              <p class="screen__kicker">An atmospheric survival game</p>
+              <h1 id="game-name"><span>SERPENT</span><em>THE LIVING PATH</em></h1>
+              <p class="screen__premise">The more you consume, the harder you become to control.</p>
+              <div class="instructions" aria-label="Game instructions">
+                <p><strong>Travel</strong><span>Forward automatically</span></p>
+                <p><strong>Collect</strong><span>The fire</span></p>
+                <p><strong>Steer</strong><span>W / S · ↑ / ↓</span></p>
+                <p><strong>Adapt</strong><span>Every 5 flames, you become faster</span></p>
+              </div>
+              <div class="stage-preview" aria-label="Three stages: Awakening, The Climb, and Survival">
+                <p class="stage-preview__path">
+                  <span>Awakening</span><b aria-hidden="true">→</b><span>The Climb</span><b aria-hidden="true">→</b><span>Survival</span>
+                </p>
+                <p class="stage-preview__detail">10 flames&nbsp; · &nbsp;10 more flames&nbsp; · &nbsp;high score</p>
+              </div>
+              <button class="game-button" id="start-button" type="button">Start</button>
+            </div>
+          </div>
+
+          <div class="screen screen--transition" id="transition-screen" hidden>
+            <div class="screen__content screen__content--compact">
+              <p class="screen__kicker" id="transition-kicker">Level 1 complete</p>
+              <h2 id="transition-title">Level 2</h2>
+              <p class="transition-subtitle" id="transition-subtitle">The Climb</p>
+              <p class="transition-note" id="transition-note">The path narrows.</p>
+              <div class="transition-rule" id="transition-rule" hidden>
+                <strong id="transition-objective">Seek water</strong>
+                <span id="transition-warning">Fire is no longer safe.</span>
+                <p id="transition-symbols" aria-label="Fire is dangerous. Water is safe.">
+                  <span>Fire ✕</span><span>Water ✓</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="screen screen--pause" id="pause-screen" hidden>
+            <div class="screen__content screen__content--compact">
+              <p class="screen__kicker">The path is waiting</p>
+              <h2>Paused</h2>
+              <button class="game-button game-button--small" id="resume-button" type="button">
+                Resume
+              </button>
+            </div>
+          </div>
+
+          <div class="screen screen--game-over" id="game-over-screen" hidden>
+            <div class="screen__content screen__content--compact">
+              <p class="screen__kicker">You lost control</p>
+              <h2>Game Over</h2>
+              <p class="game-over-reason" id="game-over-reason">Hit the stone</p>
+              <div class="final-score" aria-label="Final results">
+                <p><span>Score</span><strong id="final-score-value">0</strong></p>
+                <p><span>Best score</span><strong id="final-best-value">0</strong></p>
+              </div>
+              <button class="game-button game-button--small" id="restart-button" type="button">
+                Try Again
+              </button>
+            </div>
+          </div>
+
+          <div class="announcement" id="announcement" role="status" aria-live="polite" hidden>
+            <strong id="announcement-title">Speed increased</strong>
+            <span id="announcement-subtitle">The path quickens</span>
+          </div>
+
+          <p class="control-hint" id="control-hint">
+            <span>Auto forward</span> The kingdom moves
+            <span>Steer</span> W / S · ↑ / ↓
+          </p>
+        </div>
+
+        <p class="visually-hidden" id="game-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="serpent-living-path.js"></script>
+  </body>
+</html>

@@ -116,6 +116,7 @@
 .serpent-gallery,
 .serpent-systems,
 .serpent-sound,
+.serpent-precedent,
 .serpent-controls {
   margin-top: clamp(6rem, 10vw, 10rem);
 }
@@ -589,6 +590,184 @@
   margin-top: 2rem;
 }
 
+.precedent-introduction {
+  max-width: 62rem;
+  margin-top: clamp(2.5rem, 4vw, 4rem);
+}
+
+.precedent-introduction h3,
+.precedent-observation-lists h3 {
+  margin: 0;
+  color: var(--serpent-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2vw, 2.1rem);
+  font-weight: 400;
+}
+
+.precedent-introduction > p {
+  margin-top: 1.5rem !important;
+  color: var(--kereta-body);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.precedent-introduction > p strong {
+  color: inherit;
+  font-weight: 400;
+}
+
+.precedent-introduction .precedent-contribution {
+  max-width: 48rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--serpent-gold);
+  color: var(--kereta-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.08rem, 1.7vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.precedent-path {
+  display: flex;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding: 1.1rem 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid var(--serpent-line);
+  background: rgba(8, 23, 25, 0.35);
+}
+
+.precedent-path span {
+  color: var(--kereta-body);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.precedent-path span:first-child,
+.precedent-path span:last-child,
+.precedent-path b {
+  color: var(--serpent-gold);
+}
+
+.precedent-path b {
+  font-weight: 400;
+}
+
+.precedent-observation-lists {
+  display: grid;
+  margin-top: clamp(2.5rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.precedent-observation-lists article {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--serpent-line);
+}
+
+.precedent-observation-lists ul {
+  margin: 1.35rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--kereta-body);
+  columns: 1;
+}
+
+.precedent-observation-lists li {
+  margin: 0.45rem 0;
+  padding-left: 0.2rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.precedent-observation-lists li::marker {
+  color: var(--serpent-green);
+}
+
+.precedent-source {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem) !important;
+  color: var(--kereta-body);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.precedent-source strong {
+  color: var(--serpent-gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.precedent-source a {
+  color: var(--kereta-text);
+  text-decoration-color: var(--serpent-line);
+  text-underline-offset: 0.25em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.precedent-source a:hover {
+  color: var(--serpent-gold);
+  text-decoration-color: var(--serpent-gold);
+}
+
+.precedent-disclaimer {
+  max-width: 56rem;
+  margin-top: 0.65rem !important;
+  color: var(--kereta-body);
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+
+.precedent-observation-heading {
+  margin-top: clamp(4rem, 7vw, 6rem);
+}
+
+.precedent-gallery {
+  display: grid;
+  margin-top: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.precedent-gallery figure {
+  margin: 0;
+  border: 1px solid var(--serpent-line);
+  background: var(--serpent-deep);
+}
+
+.precedent-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--serpent-line);
+}
+
+.precedent-gallery figcaption {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.precedent-gallery figcaption strong {
+  color: var(--serpent-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.precedent-gallery figcaption strong span {
+  color: var(--serpent-green);
+  font-family: inherit;
+}
+
+.precedent-gallery figcaption p {
+  margin-top: 0.75rem !important;
+  color: var(--kereta-body);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
 @media (max-width: 48rem) {
   .serpent-top-nav {
     align-items: flex-start;
@@ -602,7 +781,9 @@
   .control-grid,
   .gameplay-gallery,
   .system-grid,
-  .element-sounds {
+  .element-sounds,
+  .precedent-observation-lists,
+  .precedent-gallery {
     grid-template-columns: 1fr;
   }
 

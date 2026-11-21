@@ -122,9 +122,14 @@ body {
   margin-top: clamp(6.5rem, 10vw, 10rem);
 }
 
+.project-page .final-cover {
+  width: min(100%, 58rem);
+  margin-inline: auto;
+}
+
 .final-cover-artwork {
   width: min(100%, 48rem);
-  margin: clamp(3rem, 5vw, 4.75rem) auto 0 !important;
+  margin: clamp(2rem, 3vw, 3rem) auto 0 !important;
 }
 
 .final-cover-artwork img,

@@ -376,6 +376,7 @@ h1 em {
   font-size: 1.2rem;
   line-height: 1;
   place-items: center;
+  text-decoration: none;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
@@ -425,6 +426,7 @@ h1 em {
 .primary-nav a:focus-visible,
 .project-link:focus-visible,
 .project-image-link:focus-visible,
+.project-arrow:focus-visible,
 .project-action:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 5px;

@@ -1,34 +1,71 @@
+.future-page {
+  --future-heading: #f7f4ec;
+  --future-body: #f1f1ed;
+  --future-secondary: rgba(255, 255, 255, 0.72);
+}
+
 .future-page .project-hero h1 {
   max-width: 11ch;
-  font-size: clamp(3.4rem, 7.3vw, 7.5rem);
+  color: var(--future-heading);
+  font-size: clamp(3.5rem, 7.3vw, 7.5rem);
   line-height: 0.92;
 }
 
 .future-page .project-introduction {
-  max-width: 62rem;
+  max-width: 58rem;
 }
 
-.wide-study {
-  margin-top: clamp(7rem, 14vw, 13rem);
+.future-page .case-section {
+  padding-top: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+
+.future-page .case-section h2 {
+  margin: 0;
+  color: var(--future-heading);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.65rem, 2.35vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.future-page .project-introduction,
+.future-page .study-heading p,
+.future-page .section-copy p,
+.future-page .design-conclusion p {
+  color: var(--future-body);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.future-page .project-nav a,
+.future-page .bottom-project-nav a,
+.future-page figcaption {
+  color: var(--future-secondary);
+}
+
+.wide-study,
+.blender-study,
+.future-page .design-conclusion {
+  margin-top: clamp(6.5rem, 10vw, 10rem);
 }
 
 .study-heading {
   display: grid;
-  grid-template-columns: minmax(13rem, 0.65fr) minmax(0, 1.35fr);
-  gap: clamp(3rem, 7vw, 8rem);
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(3rem, 6vw, 7rem);
   align-items: start;
 }
 
 .study-heading p {
-  max-width: 48rem;
-  color: #363832;
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.62;
+  max-width: 46rem;
 }
 
 .wide-artwork {
   width: 100%;
-  margin-top: clamp(3rem, 6vw, 6rem) !important;
+  margin-top: clamp(2.75rem, 4vw, 4.25rem) !important;
 }
 
 .wide-artwork img,
@@ -38,21 +75,24 @@
   height: auto;
 }
 
-.floor-plan-study {
-  margin-top: clamp(8rem, 16vw, 15rem);
-}
-
 .floor-plan-artwork {
-  margin-inline: calc(var(--page-gutter) * -0.15) !important;
-  width: calc(100% + var(--page-gutter) * 0.3);
+  width: 100%;
+  margin-inline: 0 !important;
 }
 
 .blender-study {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.72fr);
-  gap: clamp(3rem, 7vw, 8rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+  gap: clamp(3rem, 6vw, 7rem);
   align-items: center;
-  margin-top: clamp(8rem, 16vw, 15rem);
+}
+
+.blender-study .section-copy {
+  max-width: 33rem;
+}
+
+.blender-study .section-copy p {
+  margin-top: clamp(1.35rem, 2vw, 2rem);
 }
 
 .blender-study--development .section-copy {
@@ -60,12 +100,12 @@
 }
 
 .blender-study--development .blender-artwork {
-  grid-column: 1;
   grid-row: 1;
+  grid-column: 1;
 }
 
 .blender-study--final {
-  grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(20rem, 0.85fr) minmax(0, 1.15fr);
 }
 
 .blender-study--final .section-copy {
@@ -78,11 +118,13 @@
 }
 
 .blender-artwork {
-  width: min(100%, 34rem);
+  width: 100%;
+  max-width: 43rem;
 }
 
-.future-page .design-conclusion {
-  margin-top: clamp(8rem, 16vw, 15rem);
+.future-page .design-conclusion p {
+  max-width: 52rem;
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
 @media (max-width: 48rem) {
@@ -93,30 +135,28 @@
   }
 
   .wide-study,
-  .floor-plan-study,
-  .blender-study {
-    margin-top: 7rem;
+  .blender-study,
+  .future-page .design-conclusion {
+    margin-top: 6.25rem;
   }
 
   .study-heading,
   .blender-study,
   .blender-study--final {
-    grid-template-columns: 1fr;
-    gap: 2.75rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
   }
 
   .wide-artwork {
-    margin-top: 2.75rem !important;
-  }
-
-  .floor-plan-artwork {
-    width: 100%;
-    margin-inline: 0 !important;
+    margin-top: 2.5rem !important;
   }
 
   .blender-study .section-copy,
   .blender-study .blender-artwork {
+    width: 100%;
+    max-width: none;
     grid-column: 1;
+    justify-self: stretch;
   }
 
   .blender-study .section-copy {
@@ -125,15 +165,23 @@
 
   .blender-study .blender-artwork {
     grid-row: 2;
-    justify-self: start;
+  }
+}
+
+@media (max-width: 30rem) {
+  .future-page .project-hero h1 {
+    font-size: clamp(2.85rem, 14.2vw, 4.35rem);
   }
 
-  .blender-artwork {
-    width: 100%;
-    max-width: 29.25rem;
+  .future-page .case-section h2 {
+    font-size: 1.7rem;
   }
 
-  .future-page .design-conclusion {
-    margin-top: 7rem;
+  .future-page .project-introduction,
+  .future-page .study-heading p,
+  .future-page .section-copy p,
+  .future-page .design-conclusion p {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }

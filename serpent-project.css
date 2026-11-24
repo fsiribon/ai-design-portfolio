@@ -902,6 +902,41 @@
   border-top: 1px solid var(--serpent-line);
 }
 
+.evolution-sketch img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.evolution-sketch figcaption strong,
+.evolution-sketch figcaption em {
+  display: block;
+}
+
+.evolution-sketch figcaption strong {
+  color: var(--serpent-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 400;
+}
+
+.evolution-sketch figcaption em {
+  margin-top: 0.45rem;
+  color: var(--kereta-body);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.evolution-process-note {
+  max-width: 58rem;
+  margin-top: 1.2rem !important;
+  padding-left: 1.15rem;
+  border-left: 1px solid var(--serpent-gold);
+  color: var(--kereta-body);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
 .process-chain {
   display: flex;
   margin: 1.25rem 0 0;
